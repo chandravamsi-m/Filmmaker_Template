@@ -1,574 +1,207 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Films &mdash; Marcus Holloway | Documentary Portfolio</title>
-  <meta name="description"
-    content="Browse the documentary film portfolio of Marcus Holloway. Feature-length documentaries, short films, and web series exploring human rights and culture.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://filmmaker-template.netlify.app/pages/films.html">
-
-  <meta property="og:title" content="Films &mdash; Marcus Holloway Documentary Portfolio">
-  <meta property="og:description" content="Feature documentaries, short films, and web series.">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1518676590747-1e3dcf5a0f32?w=1200&q=80&auto=format&fit=crop">
-  <meta property="og:type" content="website">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/dark-mode.css">
-  <link rel="stylesheet" href="../assets/css/rtl.css">
-</head>
-
-<body>
-
-  <a href="#main-content" class="sr-only skip-link">Skip to main content</a>
-
-  <!-- ===================================================
-       SECTION: NAVIGATION
-       =================================================== -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Marcus Holloway</a>
-      <ul class="nav-links">
-        <li class="nav-item nav-item--dropdown">
-          <a href="index.html">Home</a>
-          <ul class="nav-dropdown">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
-        
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle dark/light mode">
-          <i class="fas fa-sun"></i>
-        </button>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home 1</a>
-    <a href="home-2.html">Home 2</a>
-    <a href="about.html">About</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films | Marcus Holloway</title>
     
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/config.js"></script>
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-bone text-dark dark:bg-dark dark:text-bone font-sans antialiased selection:bg-gold selection:text-dark overflow-x-hidden">
+    <div class="grain-overlay"></div>
 
-  <main id="main-content">
+    <!-- Navigation -->
+    <header class="glass-header dark" id="navbar">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-dark dark:text-bone hover:text-gold transition-colors">
+                M/H <span class="hidden sm:inline ml-2 text-sm font-sans font-normal tracking-widest uppercase text-dark dark:text-bone/40">Filmmaking</span>
+            </a>
 
-    <!-- ===================================================
-         SECTION: PAGE HEADER
-         =================================================== -->
-    <section class="page-hero">
-      <div class="container">
-        <p class="section-label">Portfolio</p>
-        <h1>Films</h1>
-        <p class="text-muted" style="max-width: 600px; font-size: 1.1rem; line-height: 1.7;">
-          A curated body of work spanning feature-length documentaries, short films, and episodic series &mdash;
-          each exploring the human condition through uncompromising storytelling.
-        </p>
-      </div>
-    </section>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-12">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-2">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-white dark:bg-surface border border-dark/10 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
+                        <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Cinematic Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Editorial Home</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
 
-    <!-- ===================================================
-         SECTION: FILTER BAR
-         =================================================== -->
-    <section class="section" style="padding-top: 0;">
-      <div class="container">
-        <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="feature">Feature Length</button>
-          <button class="filter-btn" data-filter="short">Short Film</button>
-          <button class="filter-btn" data-filter="series">Web Series</button>
-          <button class="filter-btn" data-filter="commercial">Commercial Work</button>
+            <!-- Actions -->
+            <div class="flex items-center gap-6">
+                <!-- RTL Toggle -->
+                <button id="rtl-toggle" class="text-dark dark:text-bone/40 hover:text-gold transition-colors text-sm font-mono" title="Toggle RTL">RTL</button>
+                <!-- Dark Mode -->
+                <button id="theme-toggle" class="text-dark dark:text-bone/40 hover:text-gold transition-colors w-10 h-10 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-toggle" class="lg:hidden text-dark dark:text-bone/80 hover:text-gold text-2xl">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
+            </div>
         </div>
+    </header>
 
-        <!-- ===================================================
-             SECTION: FILM GRID
-             =================================================== -->
-        <div class="film-grid film-grid--large reveal reveal-stagger">
-
-          <!-- Film 1: The Forgotten Shore -->
-          <div class="film-card film-card--large" data-category="feature">
-            <div class="film-card__image-wrap">
-              <!-- TODO: Replace with your film still -->
-              <img
-                src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="The Forgotten Shore &mdash; coastal community documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>The Forgotten Shore</h4>
-                <span class="year">2024</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Feature Length</span>
-              <h4>The Forgotten Shore</h4>
-              <p class="film-card__year">2024 &middot; 94 min</p>
-              <p>A coastal community fights to preserve their way of life against rising seas.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> Sundance</span>
-                <span class="badge"><i class="fas fa-award"></i> IDFA Winner</span>
-                <span class="badge"><i class="fas fa-award"></i> Hot Docs</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-1">View Details</button>
-            </div>
-          </div>
-
-          <!-- Detail Panel 1 -->
-          <div class="film-detail-panel" id="detail-1" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">In a remote fishing village on the Atlantic coast, a community of 200 families
-                    faces the reality that their ancestral home is disappearing beneath the waves. Shot over eighteen
-                    months, "The Forgotten Shore" follows three families as they navigate the impossible choice between
-                    holding onto everything they know and accepting an uncertain future inland.</p>
-                  <h4 style="margin-top: var(--space-md);">Director's Statement</h4>
-                  <p class="text-muted" style="font-style: italic;">"I arrived in this village expecting to make a film
-                    about climate change. Instead, I found a story about love &mdash; the love for a place, for a way of life,
-                    for the sound of waves that have been a lullaby for generations."</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Elena Vasquez<br>Editor: James
-                    Park<br>Sound Design: Marie Laurent<br>Music: Olafur Arnalds</p>
-                  <h4 style="margin-top: var(--space-md);">Festival Run</h4>
-                  <p class="text-muted">Sundance Film Festival (Official Selection) &middot; IDFA (Winner, Best Feature) &middot; Hot
-                    Docs (Best International Documentary) &middot; Sheffield DocFest (European Premiere) &middot; Venice Film Festival
-                    (Competition)</p>
-                  <div style="margin-top: var(--space-md);">
-                    <!-- TODO: Replace YOUR_VIDEO_ID with your trailer ID -->
-                    <button class="btn btn-sm btn-primary" data-lightbox="aqz-KE-bpKQ"><i class="fas fa-play"></i>
-                      Watch Trailer</button>
-                    <a href="../assets/files/press-kit.zip" class="btn btn-sm btn-secondary" download><i
-                        class="fas fa-download"></i> Download EPK</a>
-                  </div>
-                </div>
-              </div>
-              <h4 style="margin-top: var(--space-lg);">Film Stills</h4>
-              <div class="film-stills-strip">
-                <!-- TODO: Replace with your film stills -->
-                <img
-                  src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=267&h=150&q=80&auto=format&fit=crop"
-                  alt="Film still 1" width="267" height="150" loading="lazy">
-                <img
-                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=267&h=150&q=80&auto=format&fit=crop"
-                  alt="Film still 2" width="267" height="150" loading="lazy">
-                <img
-                  src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?w=267&h=150&q=80&auto=format&fit=crop"
-                  alt="Film still 3" width="267" height="150" loading="lazy">
-                <img
-                  src="https://images.unsplash.com/photo-1494615255237-45a2f5a702fb?w=267&h=150&q=80&auto=format&fit=crop"
-                  alt="Film still 4" width="267" height="150" loading="lazy">
-              </div>
-            </div>
-          </div>
-
-          <!-- Film 2: Voices in the Dark -->
-          <div class="film-card film-card--large" data-category="short">
-            <div class="film-card__image-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="Voices in the Dark &mdash; blind choir documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>Voices in the Dark</h4>
-                <span class="year">2023</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Short Film</span>
-              <h4>Voices in the Dark</h4>
-              <p class="film-card__year">2023 &middot; 22 min</p>
-              <p>Inside a blind choir in rural Appalachia.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> Tribeca</span>
-                <span class="badge"><i class="fas fa-award"></i> SXSW</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-2">View Details</button>
-            </div>
-          </div>
-
-          <!-- Detail Panel 2 -->
-          <div class="film-detail-panel" id="detail-2" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">In the mountains of West Virginia, a choir of visually impaired singers gathers
-                    weekly in a small church to rehearse. "Voices in the Dark" is an intimate portrait of community,
-                    faith, and the transformative power of music when sight is absent.</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Marcus Holloway<br>Editor: Sarah
-                    Kim<br>Sound: Tom Rivera</p>
-                  <div style="margin-top: var(--space-md);">
-                    <button class="btn btn-sm btn-primary" data-lightbox="aqz-KE-bpKQ"><i class="fas fa-play"></i>
-                      Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Film 3: The Last Archive -->
-          <div class="film-card film-card--large" data-category="feature">
-            <div class="film-card__image-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="The Last Archive &mdash; archivist documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>The Last Archive</h4>
-                <span class="year">2023</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Feature Length</span>
-              <h4>The Last Archive</h4>
-              <p class="film-card__year">2023 &middot; 67 min</p>
-              <p>A dying archivist and 70 years of forgotten history.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> IDFA</span>
-                <span class="badge"><i class="fas fa-award"></i> DOC NYC</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-3">View Details</button>
-            </div>
-          </div>
-
-          <div class="film-detail-panel" id="detail-3" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">Harold Chen has spent 50 years cataloging the stories of a Chinatown community
-                    center. Now 82 and battling cancer, he races against time to digitize 70 years of photographs, oral
-                    histories, and documents before they're lost forever.</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Wei Liu<br>Editor: James Park</p>
-                  <div style="margin-top: var(--space-md);">
-                    <button class="btn btn-sm btn-primary" data-lightbox="aqz-KE-bpKQ"><i class="fas fa-play"></i>
-                      Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Film 4: Borderline -->
-          <div class="film-card film-card--large" data-category="series">
-            <div class="film-card__image-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="Borderline &mdash; US-Mexico border documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>Borderline</h4>
-                <span class="year">2022</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Web Series</span>
-              <h4>Borderline</h4>
-              <p class="film-card__year">2022 &middot; 48 min (Ep.1)</p>
-              <p>Life at the US-Mexico border told through 6 families.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> Hot Docs</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-4">View Details</button>
-            </div>
-          </div>
-
-          <div class="film-detail-panel" id="detail-4" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">A six-part web series that follows six families living on both sides of the
-                    US-Mexico border. Episode one introduces the Ramirez family, whose daily life is divided by a line
-                    drawn in the desert.</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Diego Morales<br>Editor: Ana Torres
-                  </p>
-                  <div style="margin-top: var(--space-md);">
-                    <button class="btn btn-sm btn-primary" data-lightbox="aqz-KE-bpKQ"><i class="fas fa-play"></i>
-                      Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Film 5: Salt & Soil -->
-          <div class="film-card film-card--large" data-category="short">
-            <div class="film-card__image-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="Salt and Soil &mdash; French salt farmers documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>Salt &amp; Soil</h4>
-                <span class="year">2022</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Short Film</span>
-              <h4>Salt &amp; Soil</h4>
-              <p class="film-card__year">2022 &middot; 18 min</p>
-              <p>Traditional salt farmers in southern France face industrialization.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> Cannes Short</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-5">View Details</button>
-            </div>
-          </div>
-
-          <div class="film-detail-panel" id="detail-5" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">In the salt marshes of Guerande, three generations of paludiers harvest fleur de
-                    sel by hand &mdash; a tradition spanning centuries. When a corporate salt factory proposes to build
-                    nearby, the community must decide what they're willing to sacrifice.</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Pierre Dubois<br>Editor: Marie
-                    Laurent</p>
-                  <div style="margin-top: var(--space-md);">
-                    <button class="btn btn-sm btn-primary" data-lightbox="aqz-KE-bpKQ"><i class="fas fa-play"></i>
-                      Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Film 6: The Migration -->
-          <div class="film-card film-card--large" data-category="feature">
-            <div class="film-card__image-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1584710054621-0877dec19ac5?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="The Migration &mdash; migrant families documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>The Migration</h4>
-                <span class="year">2021</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Feature Length</span>
-              <h4>The Migration</h4>
-              <p class="film-card__year">2021 &middot; 82 min</p>
-              <p>Following three migrant families across three continents over one year.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> IDA Award</span>
-                <span class="badge"><i class="fas fa-award"></i> Cinema Eye</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-6">View Details</button>
-            </div>
-          </div>
-
-          <div class="film-detail-panel" id="detail-6" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">Over twelve months, Marcus followed three families &mdash; from Syria, Honduras, and
-                    Myanmar &mdash; as they navigated the refugee experience across Europe, Central America, and Southeast
-                    Asia. The result is a visceral, deeply human portrait of displacement and resilience.</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Multi-unit crew<br>Editor: James
-                    Park<br>Music: Nils Frahm</p>
-                  <div style="margin-top: var(--space-md);">
-                    <button class="btn btn-sm btn-primary" data-lightbox="aqz-KE-bpKQ"><i class="fas fa-play"></i>
-                      Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Film 7: After the Flood -->
-          <div class="film-card film-card--large" data-category="short">
-            <div class="film-card__image-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="After the Flood &mdash; hurricane recovery documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>After the Flood</h4>
-                <span class="year">2021</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Short Film</span>
-              <h4>After the Flood</h4>
-              <p class="film-card__year">2021 &middot; 31 min</p>
-              <p>A community rebuilds 18 months after a devastating hurricane.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> SXSW</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-7">View Details</button>
-            </div>
-          </div>
-
-          <div class="film-detail-panel" id="detail-7" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">Eighteen months after Hurricane Maria devastated their coastal town, a
-                    tight-knit community in Puerto Rico faces the long, quiet work of rebuilding &mdash; not just their homes,
-                    but their sense of identity and belonging.</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Carlos Santos<br>Editor: Sarah Kim
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Film 8: Dispatch -->
-          <div class="film-card film-card--large" data-category="feature">
-            <div class="film-card__image-wrap">
-              <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=640&h=360&q=80&auto=format&fit=crop"
-                alt="Dispatch &mdash; war correspondents documentary" width="640" height="360" loading="lazy"
-                class="film-card__image">
-              <div class="film-card__hover-overlay">
-                <h4>Dispatch</h4>
-                <span class="year">2020</span>
-              </div>
-            </div>
-            <div class="film-card__info">
-              <span class="film-card__category">Feature Length</span>
-              <h4>Dispatch</h4>
-              <p class="film-card__year">2020 &middot; 55 min</p>
-              <p>Three war correspondents. One conflict. Unfiltered.</p>
-              <div class="film-card__laurels">
-                <span class="badge"><i class="fas fa-award"></i> Tribeca Grand Jury</span>
-                <span class="badge"><i class="fas fa-award"></i> Cinema Eye Nominee</span>
-              </div>
-              <button class="btn btn-sm btn-secondary" data-film-detail="detail-8">View Details</button>
-            </div>
-          </div>
-
-          <div class="film-detail-panel" id="detail-8" style="grid-column: 1 / -1;">
-            <div class="film-detail-panel__inner">
-              <div class="film-detail-panel__grid">
-                <div>
-                  <h3>Synopsis</h3>
-                  <p class="text-muted">Three veteran war correspondents &mdash; a photographer, a radio journalist, and a TV
-                    reporter &mdash; cover the same conflict from radically different perspectives. "Dispatch" pulls back the
-                    curtain on the people who risk everything to bring us the news.</p>
-                </div>
-                <div>
-                  <h4>Cast &amp; Crew</h4>
-                  <p class="text-muted">Director: Marcus Holloway<br>Cinematography: Marcus Holloway, Elena
-                    Vasquez<br>Editor: James Park<br>Sound: Tom Rivera</p>
-                  <div style="margin-top: var(--space-md);">
-                    <button class="btn btn-sm btn-primary" data-lightbox="aqz-KE-bpKQ"><i class="fas fa-play"></i>
-                      Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bone dark:bg-dark flex flex-col items-center justify-center translate-x-full transition-transform duration-700 ease-in-out">
+        <button id="mobile-close" class="absolute top-8 right-8 text-3xl text-dark dark:text-bone/40 hover:text-gold">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col items-center space-y-8 text-center">
+            <a href="index.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Home</a>
+            <a href="about.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">About</a>
+            <a href="portfolio.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Portfolio</a>
+            <a href="gallery.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold text-gold">Gallery</a>
+            <a href="tools.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Tools</a>
+            <a href="services.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Services</a>
+            <a href="contact.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Contact</a>
         </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===================================================
-       SECTION: FOOTER
-       =================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Marcus Holloway</h4>
-          <p>Documentary filmmaker. Telling the stories the world hasn't heard yet.</p>
-          <div class="social-links">
-            <a href="https://instagram.com/marcus.holloway.films" target="_blank" rel="noopener noreferrer"
-              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://vimeo.com/marcusholloway" target="_blank" rel="noopener noreferrer" aria-label="Vimeo"><i
-                class="fab fa-vimeo-v"></i></a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i
-                class="fab fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a href="https://imdb.com/" target="_blank" rel="noopener noreferrer" aria-label="IMDb"><i
-                class="fab fa-imdb"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-            <li><a href="about.html">About</a></li>
-            
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><a href="mailto:contact@marcusholloway.com">contact@marcusholloway.com</a></p>
-          <p>New York, USA</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Marcus Holloway. All rights reserved.</span>
-        <span>Made with HTML, CSS &amp; JS &middot; <a href="https://validator.w3.org" target="_blank"
-            rel="noopener noreferrer">W3C Valid</a></span>
-      </div>
     </div>
-  </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox-overlay" role="dialog" aria-modal="false" aria-label="Film trailer">
-    <div class="lightbox-content">
-      <button class="lightbox-close" aria-label="Close trailer"><i class="fas fa-times"></i></button>
-      <div class="lightbox-video"></div>
-    </div>
-  </div>
+    <main id="main-content" class="pt-48 pb-24">
+        <!-- Page Header -->
+        <div class="container mx-auto px-6 mb-24 min-h-[60vh] flex flex-col justify-center snap-start">
+            <p class="font-mono text-gold text-xs uppercase tracking-widest mb-8 reveal-up">Archive</p>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 reveal-up">Films.</h1>
+            <p class="max-w-2xl text-dark dark:text-bone/40 text-lg md:text-xl font-light reveal-up">
+                A curated body of work spanning feature-length documentaries, short films, and episodic series—each exploring the human condition through uncompromising storytelling.
+            </p>
+        </div>
 
-  <script src="../assets/js/main.js"></script>
+        <!-- Filter Bar -->
+        <div class="container mx-auto px-6 mb-16 flex flex-wrap gap-4 snap-start reveal-up">
+             <button class="filter-btn active px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="all">All</button>
+             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="feature">Feature Length</button>
+             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="short">Short Film</button>
+             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="series">Web Series</button>
+             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="commercial">Commercial Work</button>
+        </div>
+
+        <!-- Film Grid -->
+        <div class="container mx-auto px-6 mb-32">
+            <div class="grid grid-cols-1 gap-32" id="film-grid">
+                <!-- Film 1 -->
+                <div class="film-card group reveal-up" data-category="feature">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 aspect-video bg-white dark:bg-surface overflow-hidden relative shadow-2xl">
+                             <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&q=80" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
+                             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                 <button class="w-24 h-24 rounded-full bg-gold text-dark flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform">
+                                     <i class="fas fa-play text-2xl"></i>
+                                 </button>
+                             </div>
+                        </div>
+                        <div class="lg:col-span-5 space-y-8">
+                            <span class="font-mono text-[10px] text-gold uppercase tracking-[0.3em] block">Feature Length / 2024</span>
+                            <h2 class="text-4xl md:text-6xl font-black group-hover:text-gold transition-colors">The Forgotten Shore</h2>
+                            <p class="text-dark dark:text-bone/40 text-lg font-light leading-relaxed">A coastal community fights to preserve their way of life against rising seas. Shot over eighteen months, following three families navigatig the impossible choice between ancestry and an uncertain future.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono"><i class="fas fa-award mr-2 text-gold"></i> Sundance</span>
+                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono"><i class="fas fa-award mr-2 text-gold"></i> IDFA Winner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Film 2 -->
+                <div class="film-card group reveal-up" data-category="short">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 lg:order-2 aspect-video bg-white dark:bg-surface overflow-hidden relative shadow-2xl">
+                             <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1200&q=80" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
+                        </div>
+                        <div class="lg:col-span-5 lg:order-1 space-y-8 lg:text-right">
+                            <span class="font-mono text-[10px] text-gold uppercase tracking-[0.3em] block">Short Film / 2023</span>
+                            <h2 class="text-4xl md:text-6xl font-black group-hover:text-gold transition-colors">Voices in the Dark</h2>
+                            <p class="text-dark dark:text-bone/40 text-lg font-light leading-relaxed">Inside a blind choir in rural Appalachia. An intimate portrait of community, faith, and the transformative power of music when sight is absent.</p>
+                            <div class="flex flex-wrap gap-4 lg:justify-end">
+                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono">Tribeca</span>
+                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono">SXSW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bone dark:bg-dark/80 backdrop-blur-xl pt-32 pb-12 border-t border-dark/5 dark:border-white/5 snap-start">
+        <div class="container mx-auto px-6">
+            <!-- Call to Action -->
+            <div class="flex flex-col md:flex-row items-end justify-between gap-12 mb-32 reveal-up">
+                <div class="max-w-2xl">
+                    <p class="font-mono text-gold text-xs uppercase tracking-[0.4em] mb-8">Next Project</p>
+                    <h2 class="text-6xl md:text-8xl font-serif italic font-black leading-tight text-dark dark:text-bone">Let's build a vision <br> together.</h2>
+                </div>
+                <a href="contact.html" class="group relative px-12 py-6 bg-gold text-dark focus:text-dark group-hover:text-dark font-black uppercase tracking-[0.3em] text-[10px] hover:bg-bone transition-all duration-500 shadow-2xl overflow-hidden">
+                    <span class="relative z-10">Start a Project</span>
+                    <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                </a>
+            </div>
+
+            <!-- Footer Main -->
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-16 mb-24 border-t border-dark/5 dark:border-white/5 pt-24 reveal-up">
+                <div class="col-span-1 md:col-span-2 lg:col-span-2 space-y-8">
+                    <a href="index.html" class="text-3xl font-serif font-black tracking-tighter text-dark dark:text-bone hover:text-gold transition-colors">M/H</a>
+                    <p class="text-dark dark:text-bone/40 max-w-xs leading-relaxed font-light text-sm italic">
+                        Capturing the raw essence of human stories across the globe.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+                <div class="lg:col-start-4">
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Exploration</h4>
+                    <ul class="space-y-4 text-xs font-mono text-dark dark:text-bone/40">
+                        <li><a href="index.html" class="hover:text-gold transition-colors block">Home</a></li>
+                        <li><a href="blog.html" class="hover:text-gold transition-colors block">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Studio</h4>
+                    <ul class="space-y-4 text-xs font-mono text-dark dark:text-bone/40">
+                        <li><a href="about.html" class="hover:text-gold transition-colors block">The Story</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors block">Get in Touch</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-dark/5 dark:border-white/5 gap-8 reveal-up">
+                <p class="text-dark dark:text-bone/20 font-mono text-[8px] uppercase tracking-[0.5em]">&copy; 2026 Marcus Holloway.</p>
+                <a href="#navbar" class="group flex items-center gap-4 text-dark dark:text-bone/20 hover:text-gold font-mono text-[8px] uppercase tracking-[0.5em] transition-all">
+                    <span>Back to Top</span>
+                    <i class="fas fa-arrow-up text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
-
-
-

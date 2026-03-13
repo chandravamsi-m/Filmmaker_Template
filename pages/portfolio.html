@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editorial Vision | Marcus Holloway</title>
+    <title>Portfolio | Marcus Holloway</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,14 +37,14 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center space-x-12">
                 <div class="relative group">
-                    <button class="nav-link active flex items-center gap-2">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <button class="nav-link flex items-center gap-2">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-48 bg-white dark:bg-surface border border-dark/10 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
                         <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Cinematic Home</a>
-                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors active">Editorial Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Editorial Home</a>
                     </div>
                 </div>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="portfolio.html" class="nav-link active">Portfolio</a>
                 <a href="gallery.html" class="nav-link">Gallery</a>
                 <a href="tools.html" class="nav-link">Tools</a>
                 <a href="services.html" class="nav-link">Services</a>
@@ -75,7 +75,7 @@
         <div class="flex flex-col items-center space-y-8 text-center">
             <a href="index.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Home</a>
             <a href="about.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">About</a>
-            <a href="portfolio.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Portfolio</a>
+            <a href="portfolio.html" class="text-4xl font-serif text-gold">Portfolio</a>
             <a href="gallery.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Gallery</a>
             <a href="tools.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Tools</a>
             <a href="services.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Services</a>
@@ -83,72 +83,95 @@
         </div>
     </div>
 
-    <main id="main-content">
-        <!-- Editorial Hero (Split Screen) -->
-        <section class="min-h-screen flex flex-col md:flex-row relative snap-start">
-            <!-- Left Side: Typography -->
-            <div class="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 bg-bone dark:bg-dark pt-32 md:pt-0">
-                <div class="max-w-md">
-                   <p class="font-mono text-gold text-xs uppercase tracking-[0.4em] mb-12 reveal-up">Marcus Holloway</p>
-                   <h1 class="text-7xl md:text-8xl lg:text-9xl font-black mb-12 leading-[0.9] reveal-up">EDITORIAL <br> VISION.</h1>
-                   <div class="w-24 h-1 bg-gold mb-12 reveal-up"></div>
-                   <p class="text-dark dark:text-bone/60 text-lg leading-relaxed mb-12 italic reveal-up">
-                       "To film is to witness. We tell stories not just to remember, but to reveal the hidden weight of our shared humanity."
-                   </p>
-                   <a href="portfolio.html" class="inline-flex items-center gap-4 text-xs uppercase tracking-widest font-bold text-dark dark:text-bone group hover:text-gold transition-colors reveal-up">
-                       Discover Projects <span class="group-hover:translate-x-2 transition-transform">&rarr;</span>
-                   </a>
-                </div>
-            </div>
-            
-            <!-- Right Side: Imagery Grid -->
-            <div class="w-full md:w-1/2 flex items-center justify-center bg-white dark:bg-surface relative overflow-hidden group reveal-up">
-                 <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:scale-110 group-hover:opacity-60 transition-all duration-1000" alt="Camera lens">
-                 <div class="absolute inset-0 bg-bone dark:bg-dark/40"></div>
-                 <div class="relative z-10 w-full p-12 lg:p-24 grid grid-cols-2 gap-8">
-                     <div class="aspect-[3/4] bg-bone dark:bg-dark/80 backdrop-blur shadow-2xl overflow-hidden translate-y-8 scale-100 hover:scale-105 transition-transform duration-700">
-                         <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80" alt="Stills" class="w-full h-full object-cover">
-                     </div>
-                     <div class="aspect-[3/4] bg-bone dark:bg-dark/80 backdrop-blur shadow-2xl overflow-hidden -translate-y-8 scale-100 hover:scale-105 transition-transform duration-700">
-                         <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&q=80" alt="Stills" class="w-full h-full object-cover">
-                     </div>
-                 </div>
-            </div>
-        </section>
+    <main id="main-content" class="pt-48 pb-24">
+        <!-- Page Header -->
+        <div class="container mx-auto px-6 mb-24 min-h-[60vh] flex flex-col justify-center snap-start">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 reveal-up">Portfolio.</h1>
+            <p class="max-w-2xl text-dark dark:text-bone/40 text-lg md:text-xl font-light reveal-up">
+                A selection of documentary features, shorts, and experimental works captured across six continents. Each project is a testament to the power of truth.
+            </p>
+        </div>
 
-        <!-- Feature Work Strip -->
-        <section class="min-h-[20vh] bg-gold text-dark flex items-center overflow-hidden whitespace-nowrap border-y border-dark snap-start">
-            <div class="flex animate-marquee gap-24 font-serif font-black text-6xl italic opacity-90">
-                <span>NEW DOCUMENTARY: THE FORGOTTEN SHORE</span>
-                <span>COMING TO FESTIVALS FALL 2026</span>
-                <span>DIRECTED BY MARCUS HOLLOWAY</span>
-                <!-- Duplicate for seamless loop -->
-                <span>NEW DOCUMENTARY: THE FORGOTTEN SHORE</span>
-                <span>COMING TO FESTIVALS FALL 2026</span>
-                <span>DIRECTED BY MARCUS HOLLOWAY</span>
-            </div>
-        </section>
+        <!-- Filter Bar -->
+        <div class="container mx-auto px-6 mb-16 flex flex-wrap gap-4 snap-start reveal-up">
+             <button class="filter-btn active px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="all">All Projects</button>
+             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="features">Feature Films</button>
+             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="shorts">Shorts</button>
+             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="commercial">Commercial</button>
+        </div>
 
-        <!-- Interactive Journey Section -->
-        <section class="min-h-screen flex items-center py-32 container mx-auto px-6 snap-start">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-24">
-                <div class="space-y-6 reveal-up">
-                    <span class="text-gold font-mono text-[10px]">01.</span>
-                    <h3 class="text-3xl md:text-5xl">Substance</h3>
-                    <p class="text-dark dark:text-bone/40 leading-relaxed text-lg">We prioritize human narratives over visual gimmicks, focusing on the psychological depth of our subjects.</p>
+        <!-- Portfolio Grid -->
+        <div class="container mx-auto px-6 mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32" id="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="project-card group reveal-up" data-category="features">
+                    <div class="aspect-video bg-white dark:bg-surface overflow-hidden mb-8 relative shadow-2xl">
+                         <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&q=80" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                             <span class="font-mono text-[10px] text-gold uppercase tracking-widest mb-4 block">Feature Film — 2024</span>
+                             <h3 class="text-3xl md:text-5xl mb-4 group-hover:text-gold transition-colors">The Forgotten Shore</h3>
+                             <p class="text-dark dark:text-bone/40 max-w-md font-light text-lg">A coastal community fights to preserve their way of life against rising seas.</p>
+                        </div>
+                        <a href="films.html" class="w-16 h-16 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-gold hover:text-dark focus:text-dark group-hover:text-dark transition-all">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="space-y-6 md:translate-y-12 reveal-up">
-                    <span class="text-gold font-mono text-[10px]">02.</span>
-                    <h3 class="text-3xl md:text-5xl">Precision</h3>
-                    <p class="text-dark dark:text-bone/40 leading-relaxed text-lg">Every frame is a deliberate choice, crafted with an understanding of lighting, timing, and emotional resonance.</p>
+
+                <!-- Project 2 -->
+                <div class="project-card group md:translate-y-32 reveal-up" data-category="shorts">
+                    <div class="aspect-video bg-white dark:bg-surface overflow-hidden mb-8 relative shadow-2xl">
+                         <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1200&q=80" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                             <span class="font-mono text-[10px] text-gold uppercase tracking-widest mb-4 block">Short Documentary — 2023</span>
+                             <h3 class="text-3xl md:text-5xl mb-4 group-hover:text-gold transition-colors">Voices in the Dark</h3>
+                             <p class="text-dark dark:text-bone/40 max-w-md font-light text-lg">Following the lives of a unique community in rural Kentucky.</p>
+                        </div>
+                        <a href="films.html" class="w-16 h-16 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-gold hover:text-dark focus:text-dark group-hover:text-dark transition-all">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="space-y-6 md:translate-y-24 reveal-up">
-                    <span class="text-gold font-mono text-[10px]">03.</span>
-                    <h3 class="text-3xl md:text-5xl">Impact</h3>
-                    <p class="text-dark dark:text-bone/40 leading-relaxed text-lg">Our goal is to provoke thought, initiate dialogue, and document the world as it truly is.</p>
+
+                <!-- Project 3 -->
+                <div class="project-card group reveal-up" data-category="features">
+                    <div class="aspect-video bg-white dark:bg-surface overflow-hidden mb-8 relative shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80" alt="Work" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                             <span class="font-mono text-[10px] text-gold uppercase tracking-widest mb-4 block">Feature Film — 2023</span>
+                             <h3 class="text-3xl md:text-5xl mb-4 group-hover:text-gold transition-colors">The Last Archive</h3>
+                             <p class="text-dark dark:text-bone/40 max-w-md font-light text-lg">A profound journey into the vanishing memory of the silent film era.</p>
+                        </div>
+                        <a href="films.html" class="w-16 h-16 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-gold hover:text-dark focus:text-dark group-hover:text-dark transition-all">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                 <!-- Project 4 -->
+                 <div class="project-card group md:translate-y-32 reveal-up" data-category="commercial">
+                    <div class="aspect-video bg-white dark:bg-surface overflow-hidden mb-8 relative shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1485001564903-59e9a48f97cb?w=1200&q=80" alt="Work" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                             <span class="font-mono text-[10px] text-gold uppercase tracking-widest mb-4 block">Commercial — 2022</span>
+                             <h3 class="text-3xl md:text-5xl mb-4 group-hover:text-gold transition-colors">Origins of Craft</h3>
+                             <p class="text-dark dark:text-bone/40 max-w-md font-light text-lg">An editorial campaign for global craft spirits.</p>
+                        </div>
+                        <a href="films.html" class="w-16 h-16 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-gold hover:text-dark focus:text-dark group-hover:text-dark transition-all">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -202,16 +225,6 @@
             </div>
         </div>
     </footer>
-
-    <style>
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 30s linear infinite;
-        }
-    </style>
 
     <!-- External Scripts -->
     <script src="../assets/js/main.js"></script>

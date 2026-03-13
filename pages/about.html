@@ -1,394 +1,218 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About &mdash; Marcus Holloway | Documentary Filmmaker</title>
-  <meta name="description"
-    content="Learn about Marcus Holloway, an award-winning documentary filmmaker based in New York. Bio, career timeline, awards, and filmmaking approach.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://filmmaker-template.netlify.app/pages/about.html">
-
-  <meta property="og:title" content="About Marcus Holloway &mdash; Documentary Filmmaker">
-  <meta property="og:description"
-    content="Award-winning documentary filmmaker. Bio, career timeline, and filmmaking approach.">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1518676590747-1e3dcf5a0f32?w=1200&q=80&auto=format&fit=crop">
-  <meta property="og:type" content="website">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Marcus Holloway",
-    "jobTitle": "Documentary Filmmaker",
-    "url": "https://filmmaker-template.netlify.app",
-    "sameAs": ["https://vimeo.com/marcusholloway", "https://instagram.com/marcus.holloway.films"],
-    "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressCountry": "US" }
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/dark-mode.css">
-  <link rel="stylesheet" href="../assets/css/rtl.css">
-</head>
-
-<body>
-
-  <a href="#main-content" class="sr-only skip-link">Skip to main content</a>
-
-  <!-- ===================================================
-       SECTION: NAVIGATION
-       =================================================== -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Marcus Holloway</a>
-      <ul class="nav-links">
-        <li class="nav-item nav-item--dropdown">
-          <a href="index.html">Home</a>
-          <ul class="nav-dropdown">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html" class="active">About</a></li>
-        
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle dark/light mode">
-          <i class="fas fa-sun"></i>
-        </button>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home 1</a>
-    <a href="home-2.html">Home 2</a>
-    <a href="about.html">About</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Marcus Holloway | Documentary Filmmaker</title>
     
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/config.js"></script>
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-bone text-dark dark:bg-dark dark:text-bone font-sans antialiased selection:bg-gold selection:text-dark overflow-x-hidden">
+    <div class="grain-overlay"></div>
 
-  <main id="main-content">
+    <!-- Navigation -->
+    <header class="glass-header dark" id="navbar">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-dark dark:text-bone hover:text-gold transition-colors">
+                M/H <span class="hidden sm:inline ml-2 text-sm font-sans font-normal tracking-widest uppercase text-dark dark:text-bone/40">Filmmaking</span>
+            </a>
 
-    <!-- ===================================================
-         SECTION: PAGE HERO
-         =================================================== -->
-    <section class="page-hero">
-      <div class="container">
-        <div class="page-hero--split">
-          <div>
-            <!-- TODO: Replace with your portrait image -->
-            <!-- TODO: Replace with WebP format for better performance -->
-            <img
-              src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=800&h=1000&q=80&auto=format&fit=crop"
-              alt="Marcus Holloway &mdash; Documentary Filmmaker portrait" width="800" height="1000" loading="eager"
-              class="page-hero__image">
-          </div>
-          <div class="page-hero__content">
-            <p class="section-label">Documentary Filmmaker</p>
-            <!-- TODO: Replace with your name -->
-            <h1>Marcus Holloway</h1>
-            <p class="text-muted" style="font-size: 1.1rem; line-height: 1.7;">
-              Award-winning documentary filmmaker based in New York, specializing in human rights,
-              environmental, and cultural documentaries. 15 years of bringing untold stories to light.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-12">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-2">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-white dark:bg-surface border border-dark/10 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
+                        <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Cinematic Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Editorial Home</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
 
-    <div class="film-strip"></div>
-
-    <!-- ===================================================
-         SECTION: BIOGRAPHY
-         =================================================== -->
-    <section class="section">
-      <div class="container">
-        <div class="bio-section reveal">
-          <!-- TODO: Replace with your biography -->
-          <p>
-            Marcus Holloway is an independent documentary filmmaker whose work focuses on human rights,
-            environmental justice, and the untold stories of marginalized communities. Born and raised
-            in Brooklyn, New York, Marcus discovered his passion for visual storytelling at the age of
-            sixteen when he borrowed a Hi8 camcorder and documented the daily lives of workers at a
-            local bodega.
-          </p>
-          <hr class="divider divider--short">
-          <p>
-            After graduating from NYU Tisch School of the Arts with a degree in Film & Television,
-            Marcus spent three years as a camera operator for National Geographic before founding his
-            own production company, Holloway Films. His debut feature documentary, "Dispatch" (2020),
-            followed three war correspondents across two continents and premiered at the Tribeca Film
-            Festival, where it won the Grand Jury Prize.
-          </p>
-          <hr class="divider divider--short">
-          <p>
-            His films have screened at over 40 international festivals, including Sundance, IDFA,
-            Hot Docs, and the Venice Film Festival. Marcus is a two-time Cinema Eye Honors nominee
-            and a recipient of the International Documentary Association's Emerging Filmmaker Award.
-            When not in the field, he mentors aspiring filmmakers through the Tribeca Film Institute's
-            documentary program.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================
-         SECTION: FILMMAKER'S APPROACH
-         =================================================== -->
-    <section class="section section--surface">
-      <div class="container">
-        <div class="statement-section reveal">
-          <p class="section-label">My Approach</p>
-          <h2 class="section-heading">A Philosophy of Immersion</h2>
-          <!-- TODO: Replace with your filmmaker statement -->
-          <blockquote>
-            "I believe documentary filmmaking is an act of listening. My camera is not a voyeur &mdash;
-            it's a witness. I spend months, sometimes years, embedded with my subjects because the
-            most honest stories can only emerge when trust replaces performance. I chase the quiet
-            moments, the pauses between words, the glances that reveal what language cannot."
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================
-         SECTION: CAREER TIMELINE
-         =================================================== -->
-    <section class="section">
-      <div class="container">
-        <p class="section-label text-center reveal">Career</p>
-        <h2 class="section-heading text-center reveal">The Journey</h2>
-
-        <!-- TODO: Replace with your career milestones -->
-        <div class="timeline reveal">
-          <div class="timeline-item">
-            <div class="timeline-item__year">2010</div>
-            <div class="timeline-item__title">First Documentary Short</div>
-            <div class="timeline-item__desc">Completed "Morning Shift," a 12-minute portrait of overnight workers in
-              Manhattan, shot entirely on a borrowed Canon 5D Mark II.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-item__year">2013</div>
-            <div class="timeline-item__title">National Geographic &mdash; Camera Operator</div>
-            <div class="timeline-item__desc">Joined National Geographic's documentary team as a field camera operator,
-              covering stories in Southeast Asia and Sub-Saharan Africa.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-item__year">2017</div>
-            <div class="timeline-item__title">Founded Holloway Films</div>
-            <div class="timeline-item__desc">Launched independent production company to produce socially conscious
-              documentary films with full creative control.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-item__year">2020</div>
-            <div class="timeline-item__title">Tribeca Grand Jury Prize</div>
-            <div class="timeline-item__desc">"Dispatch" premiered at Tribeca Film Festival and won the Grand Jury Prize
-              for Best Documentary Feature.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-item__year">2024</div>
-            <div class="timeline-item__title">Sundance Official Selection</div>
-            <div class="timeline-item__desc">"The Forgotten Shore" selected for Sundance Film Festival's World Cinema
-              Documentary Competition.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================
-         SECTION: SKILLS & TOOLS
-         =================================================== -->
-    <section class="section section--surface" id="tools">
-      <div class="container">
-        <p class="section-label text-center reveal">Expertise</p>
-        <h2 class="section-heading text-center reveal">Skills &amp; Tools</h2>
-
-        <div class="skills-grid reveal reveal-stagger">
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-camera-retro"></i></div>
-            <h4 class="feature-card__title">Documentary Styles</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Observational</span>
-              <span class="skill-tag">Expository</span>
-              <span class="skill-tag">Participatory</span>
-              <span class="skill-tag">Poetic</span>
+            <!-- Actions -->
+            <div class="flex items-center gap-6">
+                <!-- RTL Toggle -->
+                <button id="rtl-toggle" class="text-dark dark:text-bone/40 hover:text-gold transition-colors text-sm font-mono" title="Toggle RTL">RTL</button>
+                <!-- Dark Mode -->
+                <button id="theme-toggle" class="text-dark dark:text-bone/40 hover:text-gold transition-colors w-10 h-10 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-toggle" class="lg:hidden text-dark dark:text-bone/80 hover:text-gold text-2xl">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
             </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-video"></i></div>
-            <h4 class="feature-card__title">Equipment</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">Sony FX9</span>
-              <span class="skill-tag">Canon C300 III</span>
-              <span class="skill-tag">DJI Ronin 4D</span>
-              <span class="skill-tag">DJI Mavic 3 Pro</span>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-edit"></i></div>
-            <h4 class="feature-card__title">Post-Production</h4>
-            <div class="skill-tags">
-              <span class="skill-tag">DaVinci Resolve</span>
-              <span class="skill-tag">Adobe Premiere</span>
-              <span class="skill-tag">After Effects</span>
-              <span class="skill-tag">Pro Tools</span>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- ===================================================
-         SECTION: AWARDS & RECOGNITION
-         =================================================== -->
-    <section class="section">
-      <div class="container">
-        <p class="section-label text-center reveal">Honors</p>
-        <h2 class="section-heading text-center reveal">Awards &amp; Recognition</h2>
-
-        <div class="reveal" style="overflow-x: auto;">
-          <!-- TODO: Replace with your awards -->
-          <table class="awards-table">
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>Award</th>
-                <th>Festival / Organization</th>
-                <th>Film</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>2024</td>
-                <td>Official Selection</td>
-                <td>Sundance Film Festival</td>
-                <td>The Forgotten Shore</td>
-              </tr>
-              <tr>
-                <td>2023</td>
-                <td>Best Feature Documentary</td>
-                <td>IDFA</td>
-                <td>The Last Archive</td>
-              </tr>
-              <tr>
-                <td>2022</td>
-                <td>Audience Award</td>
-                <td>Hot Docs Festival</td>
-                <td>Borderline</td>
-              </tr>
-              <tr>
-                <td>2021</td>
-                <td>Emerging Filmmaker Award</td>
-                <td>International Documentary Association</td>
-                <td>The Migration</td>
-              </tr>
-              <tr>
-                <td>2020</td>
-                <td>Grand Jury Prize</td>
-                <td>Tribeca Film Festival</td>
-                <td>Dispatch</td>
-              </tr>
-              <tr>
-                <td>2020</td>
-                <td>Cinema Eye Honors &mdash; Nominee</td>
-                <td>Cinema Eye Honors</td>
-                <td>Dispatch</td>
-              </tr>
-            </tbody>
-          </table>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bone dark:bg-dark flex flex-col items-center justify-center translate-x-full transition-transform duration-700 ease-in-out">
+        <button id="mobile-close" class="absolute top-8 right-8 text-3xl text-dark dark:text-bone/40 hover:text-gold">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col items-center space-y-8 text-center">
+            <a href="index.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Home</a>
+            <a href="about.html" class="text-4xl font-serif text-gold">About</a>
+            <a href="tools.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Tools</a>
+            <a href="services.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Services</a>
+            <a href="blog.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Blog</a>
+            <a href="contact.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Contact</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ===================================================
-         SECTION: CLIENTS & COLLABORATORS
-         =================================================== -->
-    <section class="section section--surface">
-      <div class="container text-center">
-        <p class="section-label reveal">Partnerships</p>
-        <h2 class="section-heading reveal">Trusted By &amp; Collaborated With</h2>
-
-        <div class="collab-grid reveal">
-          <span class="press-logo">National Geographic</span>
-          <span class="press-logo">PBS / POV</span>
-          <span class="press-logo">Sundance Institute</span>
-          <span class="press-logo">Ford Foundation</span>
-          <span class="press-logo">Tribeca Film Institute</span>
-          <span class="press-logo">A24</span>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===================================================
-       SECTION: FOOTER
-       =================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Marcus Holloway</h4>
-          <p>Documentary filmmaker. Telling the stories the world hasn't heard yet.</p>
-          <div class="social-links">
-            <a href="https://instagram.com/marcus.holloway.films" target="_blank" rel="noopener noreferrer"
-              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://vimeo.com/marcusholloway" target="_blank" rel="noopener noreferrer" aria-label="Vimeo"><i
-                class="fab fa-vimeo-v"></i></a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i
-                class="fab fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a href="https://imdb.com/" target="_blank" rel="noopener noreferrer" aria-label="IMDb"><i
-                class="fab fa-imdb"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-            <li><a href="about.html">About</a></li>
-            
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><a href="mailto:contact@marcusholloway.com">contact@marcusholloway.com</a></p>
-          <p>New York, USA</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Marcus Holloway. All rights reserved.</span>
-        <span>Made with HTML, CSS &amp; JS &middot; <a href="https://validator.w3.org" target="_blank"
-            rel="noopener noreferrer">W3C Valid</a></span>
-      </div>
     </div>
-  </footer>
 
-  <script src="../assets/js/main.js"></script>
+    <main id="main-content" class="pt-32">
+        <!-- About Hero -->
+        <section class="min-h-screen flex items-center mb-32 snap-start">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-20 items-center">
+                    <div class="w-full lg:w-5/12 aspect-[3/4] bg-white dark:bg-surface relative overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e16fd3c?w=1000&q=80" alt="Marcus Holloway" class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000 scale-105" id="portrait">
+                        <div class="absolute inset-0 border-[1.5rem] border-dark/20 pointer-events-none"></div>
+                    </div>
+                    <div class="w-full lg:w-7/12">
+                       <p class="font-mono text-gold text-xs uppercase tracking-widest mb-6">The Filmmaker</p>
+                       <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-12 leading-tight">Marcus <br> Holloway.</h1>
+                       <div class="space-y-6 text-dark dark:text-bone/60 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+                           <p>
+                               Award-winning documentary filmmaker based in New York. Specializing in human rights, culture, and investigative documentaries. Festival screenings worldwide.
+                           </p>
+                           <p>
+                               With over 15 years in the field, my work focuses on the intersection of personal narrative and systemic change. I believe that the most powerful stories are those that challenge our preconceptions.
+                           </p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="min-h-screen flex items-center py-32 bg-white dark:bg-surface snap-start">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-7xl font-black mb-32 text-center">Career Journey.</h2>
+                    
+                    <div class="relative space-y-32 before:absolute before:inset-y-0 before:left-1/2 before:w-[1px] before:bg-bone/10 before:-translate-x-1/2">
+                        <!-- Timeline Entry 1 -->
+                        <div class="relative flex items-center justify-between group">
+                            <div class="w-5/12 text-right pr-12 hidden md:block">
+                                <h4 class="text-3xl text-gold mb-4">The Beginning</h4>
+                                <p class="text-dark dark:text-bone/40 text-lg">Graduated from Tisch School of the Arts. Captured first short film "Brooklyn Shadows".</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-gold shadow-[0_0_15px_rgba(232,197,71,0.5)] z-10 relative"></div>
+                            <div class="w-5/12 pl-12">
+                                <span class="font-mono text-xs text-gold">2010 — 2012</span>
+                                <h4 class="text-3xl mb-4 md:hidden text-gold">The Beginning</h4>
+                                <p class="text-dark dark:text-bone/40 text-lg md:hidden">Graduated from Tisch School of the Arts.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Entry 2 -->
+                        <div class="relative flex flex-row-reverse items-center justify-between group">
+                            <div class="w-5/12 text-left pl-12 hidden md:block">
+                                <h4 class="text-3xl text-gold mb-4">Festival Recognition</h4>
+                                <p class="text-dark dark:text-bone/40 text-lg">"Voices in the Dark" wins Best Documentary Short at Tribeca Film Festival.</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-bone/20 group-hover:bg-gold transition-colors z-10 relative"></div>
+                            <div class="w-5/12 text-right pr-12">
+                                <span class="font-mono text-xs text-gold">2015 — 2018</span>
+                                <h4 class="text-3xl mb-4 md:hidden">Festival Recognition</h4>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Entry 3 -->
+                        <div class="relative flex items-center justify-between group">
+                            <div class="w-5/12 text-right pr-12 hidden md:block">
+                                <h4 class="text-3xl text-gold mb-4">The Feature Era</h4>
+                                <p class="text-dark dark:text-bone/40 text-lg">Released first feature-length documentary "The Last Archive" to critical acclaim.</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-bone/20 group-hover:bg-gold transition-colors z-10 relative"></div>
+                            <div class="w-5/12 pl-12">
+                                <span class="font-mono text-xs text-gold">2020 — 2023</span>
+                                <h4 class="text-3xl mb-4 md:hidden">The Feature Era</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recognition & Partners -->
+        <section class="min-h-[50vh] flex items-center py-24 border-t border-dark/5 dark:border-white/5 snap-start">
+            <div class="container mx-auto px-6">
+                <p class="font-mono text-gold text-xs uppercase tracking-widest text-center mb-16">As Seen In</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 items-center opacity-40">
+                   <div class="text-center font-serif text-2xl hover:text-gold transition-colors cursor-pointer">The New York Times</div>
+                   <div class="text-center font-serif text-2xl hover:text-gold transition-colors cursor-pointer">Variety</div>
+                   <div class="text-center font-serif text-2xl hover:text-gold transition-colors cursor-pointer">IndieWire</div>
+                   <div class="text-center font-serif text-2xl hover:text-gold transition-colors cursor-pointer">The Guardian</div>
+                   <div class="text-center font-serif text-2xl hover:text-gold transition-colors cursor-pointer">A24</div>
+                   <div class="text-center font-serif text-2xl hover:text-gold transition-colors cursor-pointer">SXSW</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bone dark:bg-dark/80 backdrop-blur-xl pt-32 pb-12 border-t border-dark/5 dark:border-white/5 snap-start">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-16 mb-24 pt-24 border-t border-dark/5 dark:border-white/5 pt-24">
+                <div class="col-span-1 md:col-span-2 lg:col-span-2 space-y-8">
+                    <a href="index.html" class="text-3xl font-serif font-black tracking-tighter text-dark dark:text-bone hover:text-gold transition-colors">M/H</a>
+                    <p class="text-dark dark:text-bone/40 max-w-xs leading-relaxed font-light text-sm italic">
+                        Capturing the raw essence of human stories across the globe.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+                <div class="lg:col-start-4">
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Exploration</h4>
+                    <ul class="space-y-4 text-xs font-mono text-dark dark:text-bone/40">
+                        <li><a href="index.html" class="hover:text-gold transition-colors block">Home</a></li>
+                        <li><a href="blog.html" class="hover:text-gold transition-colors block">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Studio</h4>
+                    <ul class="space-y-4 text-xs font-mono text-dark dark:text-bone/40">
+                        <li><a href="about.html" class="hover:text-gold transition-colors block active">The Story</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors block">Get in Touch</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-dark/5 dark:border-white/5 gap-8">
+                <p class="text-dark dark:text-bone/20 font-mono text-[8px] uppercase tracking-[0.5em]">&copy; 2026 Marcus Holloway.</p>
+                <a href="#navbar" class="group flex items-center gap-4 text-dark dark:text-bone/20 hover:text-gold font-mono text-[8px] uppercase tracking-[0.5em] transition-all">
+                    <span>Back to Top</span>
+                    <i class="fas fa-arrow-up text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
-
-
-

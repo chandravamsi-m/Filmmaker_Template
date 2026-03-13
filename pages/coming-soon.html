@@ -1,132 +1,177 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon &mdash; Marcus Holloway | New Film</title>
-  <meta name="description"
-    content="A new documentary film by Marcus Holloway is in post-production. Stay tuned for the premiere.">
-  <meta name="robots" content="noindex, follow">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/dark-mode.css">
-  <link rel="stylesheet" href="../assets/css/rtl.css">
-</head>
-
-<body>
-
-  <a href="#main-content" class="sr-only skip-link">Skip to main content</a>
-
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Marcus Holloway</a>
-      <ul class="nav-links">
-        <li class="nav-item nav-item--dropdown">
-          <a href="index.html">Home</a>
-          <ul class="nav-dropdown">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
-        
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle dark/light mode">
-          <i class="fas fa-sun"></i>
-        </button>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home 1</a>
-    <a href="home-2.html">Home 2</a>
-    <a href="about.html">About</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premiere Approaching | Marcus Holloway</title>
     
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/config.js"></script>
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-bone text-dark dark:bg-dark dark:text-bone font-sans antialiased selection:bg-gold selection:text-dark overflow-x-hidden">
+    <div class="grain-overlay"></div>
 
-  <main id="main-content">
+    <!-- Navigation -->
+    <header class="glass-header dark" id="navbar">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter text-dark dark:text-bone hover:text-gold transition-colors">
+                M/H <span class="hidden sm:inline ml-2 text-sm font-sans font-normal tracking-widest uppercase text-dark dark:text-bone/40">Filmmaking</span>
+            </a>
 
-    <!-- ===================================================
-         SECTION: COMING SOON
-         =================================================== -->
-    <div class="coming-soon">
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-12">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-2">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-white dark:bg-surface border border-dark/10 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
+                        <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Cinematic Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Editorial Home</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
 
-      <!-- Grain overlay -->
-      <div class="hero-grain"></div>
-
-      <!-- TODO: Replace with your name -->
-      <div class="coming-soon__logo">Marcus Holloway</div>
-
-      <h1>Something New Is Developing</h1>
-      <p>A new film is in post-production. Stay tuned.</p>
-
-      <!-- Countdown Timer -->
-      <!-- TODO: Set your target date in main.js (LAUNCH_DATE variable) -->
-      <div class="countdown" id="countdown">
-        <div class="countdown__box">
-          <div class="countdown__number" data-days>0</div>
-          <div class="countdown__label">Days</div>
+            <!-- Actions -->
+            <div class="flex items-center gap-6">
+                <!-- RTL Toggle -->
+                <button id="rtl-toggle" class="text-dark dark:text-bone/40 hover:text-gold transition-colors text-sm font-mono" title="Toggle RTL">RTL</button>
+                <!-- Dark Mode -->
+                <button id="theme-toggle" class="text-dark dark:text-bone/40 hover:text-gold transition-colors w-10 h-10 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-toggle" class="lg:hidden text-dark dark:text-bone/80 hover:text-gold text-2xl">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
+            </div>
         </div>
-        <div class="countdown__box">
-          <div class="countdown__number" data-hours>0</div>
-          <div class="countdown__label">Hours</div>
-        </div>
-        <div class="countdown__box">
-          <div class="countdown__number" data-minutes>0</div>
-          <div class="countdown__label">Minutes</div>
-        </div>
-        <div class="countdown__box">
-          <div class="countdown__number" data-seconds>0</div>
-          <div class="countdown__label">Seconds</div>
-        </div>
-      </div>
+    </header>
 
-      <!-- Email Capture -->
-      <!-- TODO: Connect to your Mailchimp/ConvertKit list -->
-      <div class="email-capture">
-        <label for="notify-email" class="sr-only">Email address for notifications</label>
-        <input type="email" id="notify-email" placeholder="Get notified &mdash; enter your email">
-        <button class="btn btn-primary btn-sm">Subscribe</button>
-      </div>
-
-      <!-- Social Links -->
-      <div class="social-links">
-        <!-- TODO: Replace with your social media URLs -->
-        <a href="https://instagram.com/marcus.holloway.films" target="_blank" rel="noopener noreferrer"
-          aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://vimeo.com/marcusholloway" target="_blank" rel="noopener noreferrer" aria-label="Vimeo"><i
-            class="fab fa-vimeo-v"></i></a>
-        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i
-            class="fab fa-x-twitter"></i></a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-            class="fab fa-linkedin-in"></i></a>
-      </div>
-
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bone dark:bg-dark flex flex-col items-center justify-center translate-x-full transition-transform duration-700 ease-in-out">
+        <button id="mobile-close" class="absolute top-8 right-8 text-3xl text-dark dark:text-bone/40 hover:text-gold">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col items-center space-y-8 text-center">
+            <a href="index.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Home</a>
+            <a href="about.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">About</a>
+            <a href="portfolio.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Portfolio</a>
+            <a href="gallery.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Gallery</a>
+            <a href="tools.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Tools</a>
+            <a href="services.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Services</a>
+            <a href="contact.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Contact</a>
+        </div>
     </div>
 
-  </main>
+    <!-- Main Content -->
+    <main class="min-h-screen flex items-center justify-center relative overflow-hidden pt-32 pb-24">
+        <!-- Background Content -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1485001564903-59e9a48f97cb?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale opacity-20 scale-105" alt="Cinematic Backdrop">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-transparent to-dark"></div>
+        </div>
 
-  <script src="../assets/js/main.js"></script>
+        <div class="relative z-10 text-center px-6 max-w-4xl reveal-up">
+            <p class="font-mono text-gold text-xs uppercase tracking-[0.6em] mb-12 animate-pulse">In Post-Production</p>
+            <h1 class="text-5xl md:text-8xl font-black font-serif italic mb-12 leading-tight text-dark dark:text-bone">Something New <br> Is Developing.</h1>
+            <p class="text-dark dark:text-bone/40 text-lg md:text-xl font-light mb-16 max-w-2xl mx-auto leading-relaxed">
+                A new documentary vision is currently in the final stages of the edit. Sign up to receive an invitation to the private screening.
+            </p>
+            
+            <!-- Countdown -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-20" id="countdown">
+                <div class="bg-white dark:bg-surface/40 backdrop-blur-md border border-dark/5 dark:border-white/5 p-8 md:p-12 shadow-2xl">
+                    <span class="block text-4xl md:text-6xl font-serif text-gold mb-2" id="days">00</span>
+                    <span class="font-mono text-[8px] uppercase tracking-[0.3em] opacity-40 text-dark dark:text-bone/40">Days</span>
+                </div>
+                <div class="bg-white dark:bg-surface/40 backdrop-blur-md border border-dark/5 dark:border-white/5 p-8 md:p-12 shadow-2xl">
+                    <span class="block text-4xl md:text-6xl font-serif text-gold mb-2" id="hours">00</span>
+                    <span class="font-mono text-[8px] uppercase tracking-[0.3em] opacity-40 text-dark dark:text-bone/40">Hours</span>
+                </div>
+                <div class="bg-white dark:bg-surface/40 backdrop-blur-md border border-dark/5 dark:border-white/5 p-8 md:p-12 shadow-2xl">
+                    <span class="block text-4xl md:text-6xl font-serif text-gold mb-2" id="minutes">00</span>
+                    <span class="font-mono text-[8px] uppercase tracking-[0.3em] opacity-40 text-dark dark:text-bone/40">Minutes</span>
+                </div>
+                <div class="bg-white dark:bg-surface/40 backdrop-blur-md border border-dark/5 dark:border-white/5 p-8 md:p-12 shadow-2xl">
+                    <span class="block text-4xl md:text-6xl font-serif text-gold mb-2" id="seconds">00</span>
+                    <span class="font-mono text-[8px] uppercase tracking-[0.3em] opacity-40 text-dark dark:text-bone/40">Seconds</span>
+                </div>
+            </div>
+
+            <!-- Notify Form -->
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Email Address" class="flex-1 bg-dark/5 dark:bg-white/5 border border-dark/10 dark:border-white/10 px-8 py-5 focus:outline-none focus:border-gold transition-all text-dark dark:text-bone placeholder:text-dark dark:text-bone/20 font-light translate-y-0">
+                <button class="bg-gold text-dark focus:text-dark group-hover:text-dark px-12 py-5 font-black uppercase text-[10px] tracking-[0.3em] hover:bg-bone transition-all duration-500 shadow-xl overflow-hidden group relative">
+                    <span class="relative z-10">Notify Me</span>
+                    <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bone dark:bg-dark/80 backdrop-blur-xl pt-32 pb-12 border-t border-dark/5 dark:border-white/5 snap-start">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-dark/5 dark:border-white/5 gap-8 reveal-up">
+                <p class="text-dark dark:text-bone/20 font-mono text-[8px] uppercase tracking-[0.5em]">&copy; 2026 Marcus Holloway.</p>
+                <div class="flex gap-8">
+                     <a href="#" class="text-dark dark:text-bone/20 hover:text-gold font-mono text-[8px] uppercase tracking-[0.5em] transition-colors">Privacy</a>
+                     <a href="#" class="text-dark dark:text-bone/20 hover:text-gold font-mono text-[8px] uppercase tracking-[0.5em] transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Countdown Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Target Date: December 2026
+            const targetDate = new Date('2026-12-01T00:00:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance < 0) {
+                    document.getElementById('countdown').innerHTML = "<p class='text-gold font-serif text-2xl italic col-span-4'>The Premiere Has Begun.</p>";
+                    return;
+                }
+
+                document.getElementById('days').innerText = days.toString().padStart(2, '0');
+                document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        });
+    </script>
+    <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
-
-
-

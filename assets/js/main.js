@@ -68,47 +68,76 @@ function initMobileMenu() {
   });
 }
 
-/* ==============================================
-   MODULE: Theme Toggle (Dark/Light Mode)
-   ============================================== */
-
 /**
  * Toggles dark/light mode and persists preference in localStorage.
- * Auto-detects OS theme preference on first visit.
+ * Integrates with Tailwind's 'dark' class strategy.
  */
 function initThemeToggle() {
-  const toggle = document.querySelector('.theme-toggle');
-  if (!toggle) return;
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
 
-  // Check for saved preference or OS preference
-  const savedTheme = localStorage.getItem('theme-preference');
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-  } else if (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    document.body.classList.add('light-mode');
-  }
-
-  updateToggleIcon(toggle);
-
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    localStorage.setItem('theme-preference', isLight ? 'light' : 'dark');
-    updateToggleIcon(toggle);
-  });
+    const isLight = localStorage.getItem('theme') === 'light';
+    
+    // Initialize
+    if (isLight) {
+        document.documentElement.classList.remove('dark');
+        toggle.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+        document.documentElement.classList.add('dark');
+        toggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    toggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const currentlyDark = document.documentElement.classList.contains('dark');
+        toggle.innerHTML = currentlyDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', currentlyDark ? 'dark' : 'light');
+    });
 }
 
 /**
- * Updates the theme toggle button icon based on current mode.
- * @param {HTMLElement} toggle - The toggle button element
+ * Initializes GSAP animations and ScrollTrigger.
  */
-function updateToggleIcon(toggle) {
-  const isLight = document.body.classList.contains('light-mode');
-  const icon = toggle.querySelector('i');
-  if (icon) {
-    icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
-  }
-  toggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+function initGSAP() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Common Animations
+    gsap.utils.toArray('.reveal-up').forEach(item => {
+        gsap.to(item, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 90%'
+            }
+        });
+    });
+
+    // Page Specific: Home Hero
+    if (document.getElementById('hero-img')) {
+        const heroTimeline = gsap.timeline();
+        heroTimeline.to('#hero-img', { scale: 1, duration: 2, ease: 'power2.out' })
+                    .to('.reveal-up', { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power3.out' }, '-=1.5');
+    }
+
+    // Page Specific: Portfolio Grid
+    if (document.getElementById('portfolio-grid')) {
+        gsap.from('.portfolio-card', {
+            scrollTrigger: {
+                trigger: '#portfolio-grid',
+                start: 'top 80%',
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            duration: 1,
+            ease: 'power3.out'
+        });
+    }
 }
 
 /* ==============================================
@@ -498,14 +527,15 @@ function initCounters() {
    ============================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initMobileMenu();
-  initThemeToggle();
-  initLightbox();
-  initScrollReveal();
-  initActiveNav();
-  initCopyEmail();
-  initCounters();
+    initNavbar();
+    initMobileMenu();
+    initThemeToggle();
+    initGSAP();
+    initLightbox();
+    initScrollReveal();
+    initActiveNav();
+    initCopyEmail();
+    initCounters();
 
   if (document.getElementById('contact-form')) {
     initContactForm();

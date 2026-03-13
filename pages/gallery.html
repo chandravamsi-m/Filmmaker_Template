@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editorial Vision | Marcus Holloway</title>
+    <title>Gallery | Marcus Holloway</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,15 +37,15 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center space-x-12">
                 <div class="relative group">
-                    <button class="nav-link active flex items-center gap-2">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <button class="nav-link flex items-center gap-2">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-48 bg-white dark:bg-surface border border-dark/10 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
                         <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Cinematic Home</a>
-                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors active">Editorial Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-dark dark:text-bone/60 hover:text-gold hover:bg-dark/5 dark:hover:bg-white/5 transition-colors">Editorial Home</a>
                     </div>
                 </div>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="portfolio.html" class="nav-link">Portfolio</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
                 <a href="tools.html" class="nav-link">Tools</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="contact.html" class="nav-link">Contact</a>
@@ -76,79 +76,64 @@
             <a href="index.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Home</a>
             <a href="about.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">About</a>
             <a href="portfolio.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Portfolio</a>
-            <a href="gallery.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Gallery</a>
+            <a href="gallery.html" class="text-4xl font-serif text-gold">Gallery</a>
             <a href="tools.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Tools</a>
             <a href="services.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Services</a>
             <a href="contact.html" class="text-4xl font-serif text-dark dark:text-bone/60 hover:text-gold">Contact</a>
         </div>
     </div>
 
-    <main id="main-content">
-        <!-- Editorial Hero (Split Screen) -->
-        <section class="min-h-screen flex flex-col md:flex-row relative snap-start">
-            <!-- Left Side: Typography -->
-            <div class="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 bg-bone dark:bg-dark pt-32 md:pt-0">
-                <div class="max-w-md">
-                   <p class="font-mono text-gold text-xs uppercase tracking-[0.4em] mb-12 reveal-up">Marcus Holloway</p>
-                   <h1 class="text-7xl md:text-8xl lg:text-9xl font-black mb-12 leading-[0.9] reveal-up">EDITORIAL <br> VISION.</h1>
-                   <div class="w-24 h-1 bg-gold mb-12 reveal-up"></div>
-                   <p class="text-dark dark:text-bone/60 text-lg leading-relaxed mb-12 italic reveal-up">
-                       "To film is to witness. We tell stories not just to remember, but to reveal the hidden weight of our shared humanity."
-                   </p>
-                   <a href="portfolio.html" class="inline-flex items-center gap-4 text-xs uppercase tracking-widest font-bold text-dark dark:text-bone group hover:text-gold transition-colors reveal-up">
-                       Discover Projects <span class="group-hover:translate-x-2 transition-transform">&rarr;</span>
-                   </a>
-                </div>
-            </div>
-            
-            <!-- Right Side: Imagery Grid -->
-            <div class="w-full md:w-1/2 flex items-center justify-center bg-white dark:bg-surface relative overflow-hidden group reveal-up">
-                 <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:scale-110 group-hover:opacity-60 transition-all duration-1000" alt="Camera lens">
-                 <div class="absolute inset-0 bg-bone dark:bg-dark/40"></div>
-                 <div class="relative z-10 w-full p-12 lg:p-24 grid grid-cols-2 gap-8">
-                     <div class="aspect-[3/4] bg-bone dark:bg-dark/80 backdrop-blur shadow-2xl overflow-hidden translate-y-8 scale-100 hover:scale-105 transition-transform duration-700">
-                         <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80" alt="Stills" class="w-full h-full object-cover">
-                     </div>
-                     <div class="aspect-[3/4] bg-bone dark:bg-dark/80 backdrop-blur shadow-2xl overflow-hidden -translate-y-8 scale-100 hover:scale-105 transition-transform duration-700">
-                         <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&q=80" alt="Stills" class="w-full h-full object-cover">
-                     </div>
-                 </div>
-            </div>
-        </section>
+    <main id="main-content" class="pt-48 pb-24">
+        <!-- Page Header -->
+        <div class="container mx-auto px-6 mb-24 min-h-[60vh] flex flex-col justify-center snap-start">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 text-center reveal-up">Stills.</h1>
+            <p class="max-w-2xl mx-auto text-dark dark:text-bone/40 text-lg md:text-xl font-light text-center reveal-up">
+                A visual archive of moments frozen in time—behind the scenes and cinematic captures. Every frame tells a story.
+            </p>
+        </div>
 
-        <!-- Feature Work Strip -->
-        <section class="min-h-[20vh] bg-gold text-dark flex items-center overflow-hidden whitespace-nowrap border-y border-dark snap-start">
-            <div class="flex animate-marquee gap-24 font-serif font-black text-6xl italic opacity-90">
-                <span>NEW DOCUMENTARY: THE FORGOTTEN SHORE</span>
-                <span>COMING TO FESTIVALS FALL 2026</span>
-                <span>DIRECTED BY MARCUS HOLLOWAY</span>
-                <!-- Duplicate for seamless loop -->
-                <span>NEW DOCUMENTARY: THE FORGOTTEN SHORE</span>
-                <span>COMING TO FESTIVALS FALL 2026</span>
-                <span>DIRECTED BY MARCUS HOLLOWAY</span>
-            </div>
-        </section>
+        <!-- Masonry-style Grid -->
+        <div class="container mx-auto px-6 mb-32 snap-start">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-12 space-y-12" id="gallery-grid">
+                
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+                
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1542204172-3c1f81d05d0c?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
 
-        <!-- Interactive Journey Section -->
-        <section class="min-h-screen flex items-center py-32 container mx-auto px-6 snap-start">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-24">
-                <div class="space-y-6 reveal-up">
-                    <span class="text-gold font-mono text-[10px]">01.</span>
-                    <h3 class="text-3xl md:text-5xl">Substance</h3>
-                    <p class="text-dark dark:text-bone/40 leading-relaxed text-lg">We prioritize human narratives over visual gimmicks, focusing on the psychological depth of our subjects.</p>
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
                 </div>
-                <div class="space-y-6 md:translate-y-12 reveal-up">
-                    <span class="text-gold font-mono text-[10px]">02.</span>
-                    <h3 class="text-3xl md:text-5xl">Precision</h3>
-                    <p class="text-dark dark:text-bone/40 leading-relaxed text-lg">Every frame is a deliberate choice, crafted with an understanding of lighting, timing, and emotional resonance.</p>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
                 </div>
-                <div class="space-y-6 md:translate-y-24 reveal-up">
-                    <span class="text-gold font-mono text-[10px]">03.</span>
-                    <h3 class="text-3xl md:text-5xl">Impact</h3>
-                    <p class="text-dark dark:text-bone/40 leading-relaxed text-lg">Our goal is to provoke thought, initiate dialogue, and document the world as it truly is.</p>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
                 </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+                
+                 <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1513106580685-16d31191d4a1?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1485001564903-59e9a48f97cb?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&q=80" class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -202,16 +187,6 @@
             </div>
         </div>
     </footer>
-
-    <style>
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 30s linear infinite;
-        }
-    </style>
 
     <!-- External Scripts -->
     <script src="../assets/js/main.js"></script>
