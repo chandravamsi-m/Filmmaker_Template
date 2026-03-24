@@ -1,6 +1,11 @@
-/* ==============================================
-   TAILWIND CONFIGURATION & THEME INIT
-   ============================================== */
+/*
+  ==============================================
+  CONFIG: Theme & Tailwind Integration
+  TEMPLATE: Filmmaker Portfolio
+  VERSION: 1.0.0
+  DESCRIPTION: Immediate theme logic and custom tokens.
+  ==============================================
+*/
 
 // Immediate Theme Initialization (Prevent Flash)
 (function() {

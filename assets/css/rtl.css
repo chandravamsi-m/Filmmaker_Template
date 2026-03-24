@@ -1,3 +1,12 @@
+/*
+  ==============================================
+  RTL: Layout Overrides
+  TEMPLATE: Filmmaker Portfolio
+  VERSION: 1.0.0
+  DESCRIPTION: Adjustments for Right-to-Left text direction.
+  ==============================================
+*/
+
 /* ==============================================
    RTL (Right-to-Left) LAYOUT ADJUSTMENTS
    Apply by setting dir="rtl" on <html> element

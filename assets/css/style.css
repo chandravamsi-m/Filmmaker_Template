@@ -6,6 +6,15 @@
 /* ==============================================
    CSS CUSTOM PROPERTIES
    ============================================== */
+/*
+  ==============================================
+  STYLESHEET: Main Design System
+  TEMPLATE: Filmmaker Portfolio
+  VERSION: 1.0.0
+  DESCRIPTION: Core layout, typography, and component styles.
+  ==============================================
+*/
+
 :root {
   /* ==============================================
      LAYOUT & TYPOGRAPHY VARIABLES

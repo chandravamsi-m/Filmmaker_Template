@@ -2,6 +2,15 @@
    FILMMAKER TEMPLATE — DARK MODE VARIABLES
    ============================================== */
 
+/*
+  ==============================================
+  THEME: Dark Mode Overrides
+  TEMPLATE: Filmmaker Portfolio
+  VERSION: 1.0.0
+  DESCRIPTION: Color scheme for deep blacks and gold accents.
+  ==============================================
+*/
+
 :root {
   /* Colors - Dark Theme (Default) */
   --color-bg: #050505;
