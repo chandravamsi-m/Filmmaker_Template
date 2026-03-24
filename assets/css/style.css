@@ -40,6 +40,10 @@
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
   --shadow-md: 0 4px 24px rgba(0,0,0,0.6);
   --shadow-lg: 0 8px 48px rgba(0,0,0,0.8);
+
+  /* Brand Colors (Dark Mode Defaults) */
+  --color-gold: #E8C547;
+  --color-gold-rgb: 232 197 71;
 }
 
 
@@ -197,13 +201,13 @@ ul, ol {
 /* Hover & Active States */
 .glass-header .nav-link:hover,
 .glass-header .nav-link.active {
-    color: var(--color-gold) !important;
+    color: #E8C547 !important;
 }
 
 #theme-toggle:hover,
 #rtl-toggle:hover,
 #mobile-toggle:hover {
-    color: var(--color-gold) !important;
+    color: #E8C547 !important;
 }
 
 /* Scrolled State */

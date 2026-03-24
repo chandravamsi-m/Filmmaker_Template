@@ -8,9 +8,11 @@ body.light-mode {
   --color-bg: #fcfaf7; /* Bone/Off-white */
   --color-surface: #ffffff;
   --color-surface-alt: #f5f2ee;
-  --color-primary: #c5a059; /* Gold */
-  --color-primary-dark: #b38d45;
-  --color-accent-rgb: 197, 160, 89;
+  --color-primary: #856a31; /* Darkened Gold for Light Mode Readability */
+  --color-primary-dark: #6e5828;
+  --color-accent-rgb: 133 106 49;
+  --color-gold: #856a31;
+  --color-gold-rgb: 133 106 49;
   --color-text: #1a1a1a;
   --color-text-muted: #666666;
   --color-border: #e5e5e5;

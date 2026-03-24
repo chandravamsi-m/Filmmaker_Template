@@ -23,8 +23,13 @@ tailwind.config = {
                 surface: '#0d0d0d',
                 gold: {
                     light: '#f1d683',
-                    DEFAULT: '#E8C547',
-                    dark: '#c4a230'
+                    DEFAULT: ({ opacityValue }) => {
+                        if (opacityValue !== undefined) {
+                            return `rgb(var(--color-gold-rgb, 232 197 71) / ${opacityValue})`;
+                        }
+                        return `rgb(var(--color-gold-rgb, 232 197 71))`;
+                    },
+                    dark: '#b38d45'
                 },
                 bone: '#F0EDE8'
             },
