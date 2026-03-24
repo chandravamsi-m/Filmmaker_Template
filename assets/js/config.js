@@ -25,9 +25,9 @@ tailwind.config = {
                     light: '#f1d683',
                     DEFAULT: ({ opacityValue }) => {
                         if (opacityValue !== undefined) {
-                            return `rgb(var(--color-gold-rgb, 232 197 71) / ${opacityValue})`;
+                            return `rgb(var(--color-gold-rgb, 255 193 7) / ${opacityValue})`;
                         }
-                        return `rgb(var(--color-gold-rgb, 232 197 71))`;
+                        return `rgb(var(--color-gold-rgb, 255 193 7))`;
                     },
                     dark: '#b38d45'
                 },

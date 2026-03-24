@@ -41,9 +41,9 @@
   --shadow-md: 0 4px 24px rgba(0,0,0,0.6);
   --shadow-lg: 0 8px 48px rgba(0,0,0,0.8);
 
-  /* Brand Colors (Dark Mode Defaults) */
-  --color-gold: #E8C547;
-  --color-gold-rgb: 232 197 71;
+  /* Brand Colors (Dark Mode Defaults) - Brightened up to punchy gold */
+  --color-gold: #FFC107;
+  --color-gold-rgb: 255 193 7;
 }
 
 
