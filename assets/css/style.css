@@ -18,16 +18,16 @@
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
   /* Spacing (8px base grid) */
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 48px;
-  --space-xl: 80px;
-  --space-xxl: 120px;
+  --space-xs: clamp(4px, 1vw, 8px);
+  --space-sm: clamp(8px, 2vw, 16px);
+  --space-md: clamp(16px, 3vw, 24px);
+  --space-lg: clamp(24px, 5vw, 48px);
+  --space-xl: clamp(40px, 8vw, 80px);
+  --space-xxl: clamp(60px, 12vw, 120px);
 
   /* Layout */
   --container-max: 1320px;
-  --container-padding: clamp(18px, 4vw, 28px);
+  --container-padding: clamp(12px, 5vw, 28px);
   --border-radius: 4px;
   --border-radius-lg: 8px;
 
@@ -82,10 +82,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 3rem); }
-h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
-h4 { font-size: clamp(1.1rem, 1.5vw, 1.35rem); }
+h1 { font-size: clamp(2rem, 8vw, 4.5rem); }
+h2 { font-size: clamp(1.5rem, 5vw, 3rem); }
+h3 { font-size: clamp(1.1rem, 3vw, 1.75rem); }
+h4 { font-size: clamp(1rem, 2vw, 1.35rem); }
 
 p {
   margin: 0 0 var(--space-sm);
@@ -169,7 +169,7 @@ ul, ol {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 18px 0;
+  padding: clamp(10px, 2vw, 18px) 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(10, 10, 10, 0.98) !important;
   backdrop-filter: blur(16px);
@@ -260,6 +260,12 @@ ul, ol {
   width: 100%;
 }
 
+/* Keep desktop nav ordering independent from page text direction */
+.glass-header nav.hidden.lg\:flex {
+  direction: ltr;
+  flex-direction: row;
+}
+
 /* ==============================================
    MODULE: Mobile Menu (Always Dark)
    ============================================== */
@@ -339,6 +345,29 @@ ul, ol {
 
 [dir="rtl"] .glass-header .flex.items-center.gap-6 {
     flex-direction: row-reverse;
+}
+
+/* Keep desktop navbar spacing stable in RTL */
+[dir="rtl"] .glass-header nav.hidden.lg\:flex {
+    flex-direction: row-reverse;
+    column-gap: 2.5rem;
+}
+
+[dir="rtl"] .glass-header nav.hidden.lg\:flex > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Keep the Home dropdown trigger laid out as "Home chevron" in RTL */
+[dir="rtl"] .glass-header nav.hidden.lg\:flex .group > button {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* Anchor dropdowns to the right side in RTL */
+[dir="rtl"] .glass-header nav.hidden.lg\:flex .group > div[class*="absolute"] {
+    left: auto;
+    right: 0;
 }
 
 /* ==============================================

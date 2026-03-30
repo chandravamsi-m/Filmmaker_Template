@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Marcus Holloway</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,9 +32,9 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-dark group-hover:text-dark">Skip to content</a>
 
     <!-- Navigation -->
-    <header class="glass-header dark" id="navbar">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
+    <header class="glass-header dark sticky top-0" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="index.html" class="text-xl sm:text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
                 M/H <span class="hidden sm:inline ml-2 text-sm font-sans font-normal tracking-widest uppercase opacity-60">Filmmaking</span>
             </a>
 
@@ -55,12 +56,12 @@
             </nav>
 
             <!-- Actions -->
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 sm:gap-4">
                 <!-- RTL Toggle -->
-                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-sm font-mono" title="Toggle RTL">RTL</button>
+                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-[10px] sm:text-sm font-mono" title="Toggle RTL">RTL</button>
                 <!-- Dark Mode -->
-                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
-                    <i class="fas fa-moon"></i>
+                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon text-xs sm:text-base"></i>
                 </button>
                 <!-- Mobile Menu Toggle -->
                 <button id="mobile-toggle" class="lg:hidden text-white/80 hover:text-gold text-2xl">
@@ -75,8 +76,17 @@
         <button id="mobile-close" class="absolute top-8 right-8 text-3xl text-white/60 hover:text-gold transition-colors">
             <i class="fas fa-times"></i>
         </button>
-        <div class="flex flex-col items-center space-y-8 text-center">
-            <a href="index.html" class="text-4xl font-serif text-white/60 hover:text-gold">Home</a>
+        <div class="flex flex-col items-center space-y-8 text-center text-white/60">
+            <!-- Home with Dropdown -->
+            <div class="mobile-nav-item flex flex-col items-center">
+                <button class="mobile-submenu-toggle text-4xl font-serif hover:text-gold flex items-center gap-4 transition-colors text-white/60">
+                    Home <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-submenu hidden flex-col items-center space-y-4 mt-6 overflow-hidden transition-all duration-300">
+                    <a href="index.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Cinematic Home</a>
+                    <a href="home-2.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Editorial Home</a>
+                </div>
+            </div>
             <a href="about.html" class="text-4xl font-serif text-white/60 hover:text-gold">About</a>
             <a href="portfolio.html" class="text-4xl font-serif text-gold font-bold">Portfolio</a>
             <a href="gallery.html" class="text-4xl font-serif text-white/60 hover:text-gold">Gallery</a>
@@ -86,39 +96,39 @@
         </div>
     </div>
 
-    <main id="main-content" class="pt-48 pb-24">
+    <main id="main-content" class="pt-24 sm:pt-36 pb-8 sm:pb-14">
         <!-- Page Header -->
-        <div class="container mx-auto px-6 mb-24 min-h-[60vh] flex flex-col justify-center snap-start">
-            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 reveal-up">Portfolio.</h1>
-            <p class="max-w-2xl text-dark dark:text-bone/40 text-lg md:text-xl font-light reveal-up">
+        <div class="container mx-auto px-4 sm:px-6 mb-10 sm:mb-16 min-h-[32vh] sm:min-h-[46vh] flex flex-col justify-center snap-start">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-4 sm:mb-8 reveal-up">Portfolio.</h1>
+            <p class="max-w-2xl text-dark dark:text-bone/40 text-base sm:text-lg md:text-xl font-light reveal-up">
                 A selection of documentary features, shorts, and experimental works captured across six continents. Each project is a testament to the power of truth.
             </p>
         </div>
 
         <!-- Filter Bar -->
-        <div class="container mx-auto px-6 mb-16 flex flex-wrap gap-4 snap-start reveal-up">
-             <button class="filter-btn active px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="all">All Projects</button>
-             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="features">Feature Films</button>
-             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="shorts">Shorts</button>
-             <button class="filter-btn px-6 py-2 border border-dark/10 dark:border-white/10 text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="commercial">Commercial</button>
+        <div class="container mx-auto px-4 sm:px-6 mb-12 sm:mb-16 flex flex-wrap gap-2 sm:gap-4 snap-start reveal-up">
+             <button class="filter-btn active min-h-[44px] px-4 sm:px-6 py-2 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="all">All Projects</button>
+             <button class="filter-btn min-h-[44px] px-4 sm:px-6 py-2 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="features">Feature Films</button>
+             <button class="filter-btn min-h-[44px] px-4 sm:px-6 py-2 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="shorts">Shorts</button>
+             <button class="filter-btn min-h-[44px] px-4 sm:px-6 py-2 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold" data-filter="commercial">Commercial</button>
         </div>
 
         <!-- Portfolio Grid -->
-        <div class="container mx-auto px-6 mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32" id="portfolio-grid">
+        <div class="container mx-auto px-4 sm:px-6 mb-16 sm:mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 sm:gap-y-20" id="portfolio-grid">
                 <!-- Project 1 -->
                 <div class="project-card group reveal-up" data-category="features">
-                    <div class="aspect-video bg-white dark:bg-surface overflow-hidden mb-8 relative shadow-2xl">
+                    <div class="aspect-video bg-white dark:bg-surface overflow-hidden mb-6 sm:mb-8 relative shadow-2xl">
                          <img src="../assets/images/ocean-aerial.jpg" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
                     </div>
-                    <div class="flex justify-between items-start">
+                    <div class="flex justify-between items-start gap-4">
                         <div>
-                             <span class="font-mono text-[10px] text-gold uppercase tracking-widest mb-4 block">Feature Film — 2024</span>
-                             <h3 class="text-3xl md:text-5xl mb-4 group-hover:text-gold transition-colors">The Forgotten Shore</h3>
-                             <p class="text-dark dark:text-bone/40 max-w-md font-light text-lg">A coastal community fights to preserve their way of life against rising seas.</p>
+                             <span class="font-mono text-[9px] sm:text-[10px] text-gold uppercase tracking-widest mb-2 sm:mb-4 block">Feature Film — 2024</span>
+                             <h3 class="text-2xl sm:text-3xl md:text-5xl mb-2 sm:mb-4 group-hover:text-gold transition-colors">The Forgotten Shore</h3>
+                             <p class="text-dark dark:text-bone/40 max-w-md font-light text-base sm:text-lg">A coastal community fights to preserve their way of life against rising seas.</p>
                         </div>
-                        <a href="films.html" class="w-16 h-16 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-gold hover:text-dark focus:text-dark group-hover:text-dark transition-all">
-                            <i class="fas fa-arrow-right text-xl"></i>
+                        <a href="films.html" class="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 flex items-center justify-center border border-dark/10 dark:border-white/10 rounded-full hover:bg-gold hover:text-dark focus:text-dark group-hover:text-dark transition-all">
+                            <i class="fas fa-arrow-right text-lg sm:text-xl"></i>
                         </a>
                     </div>
                 </div>

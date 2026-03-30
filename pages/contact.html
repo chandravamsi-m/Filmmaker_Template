@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Marcus Holloway - Award-Winning Documentary Filmmaker</title>
     <meta name="description" content="Get in touch with Marcus Holloway for documentary projects, collaborations, and inquiries. Based in New York and available for assignments world-wide.">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,9 +37,9 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-dark group-hover:text-dark">Skip to content</a>
 
     <!-- Navigation -->
-    <header class="glass-header dark" id="navbar">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
+    <header class="glass-header dark sticky top-0" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="index.html" class="text-xl sm:text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
                 M/H <span class="hidden sm:inline ml-2 text-sm font-sans font-normal tracking-widest uppercase opacity-60">Filmmaking</span>
             </a>
 
@@ -62,12 +63,12 @@
             </nav>
 
             <!-- Actions -->
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 sm:gap-4">
                 <!-- RTL Toggle -->
-                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-sm font-mono" title="Toggle RTL">RTL</button>
+                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-[10px] sm:text-sm font-mono" title="Toggle RTL">RTL</button>
                 <!-- Dark Mode -->
-                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
-                    <i class="fas fa-moon"></i>
+                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon text-xs sm:text-base"></i>
                 </button>
                 <!-- Mobile Menu Toggle -->
                 <button id="mobile-toggle" class="lg:hidden text-white/80 hover:text-gold text-2xl">
@@ -83,7 +84,16 @@
             <i class="fas fa-times"></i>
         </button>
         <div class="flex flex-col items-center space-y-8 text-center text-white/60">
-            <a href="index.html" class="text-4xl font-serif hover:text-gold">Home</a>
+            <!-- Home with Dropdown -->
+            <div class="mobile-nav-item flex flex-col items-center">
+                <button class="mobile-submenu-toggle text-4xl font-serif hover:text-gold flex items-center gap-4 transition-colors text-white/60">
+                    Home <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-submenu hidden flex-col items-center space-y-4 mt-6 overflow-hidden transition-all duration-300">
+                    <a href="index.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Cinematic Home</a>
+                    <a href="home-2.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Editorial Home</a>
+                </div>
+            </div>
             <a href="about.html" class="text-4xl font-serif hover:text-gold">About</a>
             <a href="portfolio.html" class="text-4xl font-serif hover:text-gold">Portfolio</a>
             <a href="gallery.html" class="text-4xl font-serif hover:text-gold">Gallery</a>
@@ -93,59 +103,53 @@
         </div>
     </div>
 
-    <main id="main-content" class="pt-48">
-        <section class="min-h-screen flex items-center mb-24 snap-start">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+    <main id="main-content" class="pt-24 sm:pt-36 pb-8 sm:pb-14">
+        <section class="min-h-[72vh] flex items-center mb-10 sm:mb-16 snap-start">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                     <!-- Left: Contact Info -->
-                    <div class="space-y-16">
+                    <div class="space-y-10 sm:space-y-16">
                         <div class="reveal-up">
-                            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-tight">Let's Talk.</h1>
-                            <p class="text-dark dark:text-bone/40 text-lg md:text-xl font-light max-w-lg">Available for selective projects world-wide. Whether it's a feature documentary or a creative collaboration, reach out.</p>
+                            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 sm:mb-8 leading-tight">Let's Talk.</h1>
+                            <p class="text-dark dark:text-bone/40 text-base sm:text-lg md:text-xl font-light max-w-lg">Available for selective projects world-wide. Whether it's a feature documentary or a creative collaboration, reach out.</p>
                         </div>
 
-                        <div class="space-y-12">
+                        <div class="space-y-10 sm:space-y-12">
                             <div class="group cursor-pointer reveal-up">
-                                <p class="font-mono text-gold text-xs uppercase tracking-widest mb-4">Email</p>
-                                <button class="text-3xl md:text-5xl font-black text-dark dark:text-bone group-hover:text-gold transition-colors break-all text-left copy-btn" data-email="hello@marcusholloway.com">
+                                <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-4">Email</p>
+                                <button class="text-[clamp(1.125rem,3.4vw,2.75rem)] font-black text-dark dark:text-bone group-hover:text-gold transition-colors whitespace-nowrap leading-[0.95] text-left copy-btn" data-email="hello@marcusholloway.com">
                                     hello@marcusholloway.com
                                 </button>
-                                <span class="text-[10px] text-dark dark:text-bone/20 font-mono mt-2 block opacity-0 group-hover:opacity-100 transition-opacity">Click to copy address</span>
+                                <span class="text-[9px] sm:text-[10px] text-dark dark:text-bone/20 font-mono mt-2 block opacity-0 group-hover:opacity-100 transition-opacity">Click to copy address</span>
                             </div>
 
                             <div class="reveal-up">
-                                <p class="font-mono text-gold text-xs uppercase tracking-widest mb-4">Social</p>
-                                <div class="flex gap-8 text-2xl">
-                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors"><i class="fab fa-vimeo-v"></i></a>
-                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors"><i class="fab fa-x-twitter"></i></a>
+                                <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-4">Social</p>
+                                <div class="flex gap-6 sm:gap-8 text-xl sm:text-2xl">
+                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors relative h-11 w-11 flex items-center justify-center border border-dark/5 rounded-full"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors relative h-11 w-11 flex items-center justify-center border border-dark/5 rounded-full"><i class="fab fa-vimeo-v"></i></a>
+                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors relative h-11 w-11 flex items-center justify-center border border-dark/5 rounded-full"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
-                            </div>
-
-                            <div class="reveal-up">
-                                <p class="font-mono text-gold text-xs uppercase tracking-widest mb-4">Studio</p>
-                                <p class="text-dark dark:text-bone/60 text-lg md:text-xl font-light">42 Canal St, Floor 4<br>New York, NY 10002</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right: Form -->
-                    <div class="bg-white dark:bg-surface p-12 md:p-16 shadow-2xl relative overflow-hidden border border-dark/5 dark:border-white/5 reveal-up">
+                    <div class="bg-white dark:bg-surface p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden border border-dark/5 dark:border-white/5 reveal-up rounded-2xl">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl rounded-full"></div>
                         <h3 class="text-3xl font-black mb-12">New Inquiry</h3>
                         <!-- Formspree / Netlify Form Compatible -->
                         <form class="space-y-10" id="contact-form" action="#" method="POST" data-netlify="true">
                             <div class="relative group">
-                                <input type="text" name="name" placeholder="Your Name" class="form-input w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors placeholder:text-dark dark:text-bone/20" required>
+                                <input type="text" name="name" placeholder="Your Name" class="form-input w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors placeholder:text-dark dark:text-bone dark:placeholder:text-bone/35" required>
                                 <span class="form-error text-[10px] text-red-500 font-mono absolute -bottom-5 left-0 opacity-0 transition-opacity">This field is required.</span>
                             </div>
                             <div class="relative group">
-                                <input type="email" name="email" placeholder="Email Address" class="form-input w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-all placeholder:text-dark dark:text-bone/20" required>
+                                <input type="email" name="email" placeholder="Email Address" class="form-input w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-all placeholder:text-dark dark:text-bone dark:placeholder:text-bone/35" required>
                                 <span class="form-error text-[10px] text-red-500 font-mono absolute -bottom-5 left-0 opacity-0 transition-opacity">Please enter a valid email.</span>
                             </div>
                             <div class="relative group">
-                                <select name="project-type" class="form-select w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors text-dark dark:text-bone/40 bg-white dark:bg-surface">
+                                <select name="project-type" class="form-select w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors text-dark dark:text-bone bg-white dark:bg-surface">
                                     <option value="">Select Project Type</option>
                                     <option value="documentary">Documentary Feature</option>
                                     <option value="short">Editorial / Short</option>
@@ -153,7 +157,7 @@
                                 </select>
                             </div>
                             <div class="relative group">
-                                <textarea name="message" rows="4" placeholder="How can we help?" class="form-textarea w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors placeholder:text-dark dark:text-bone/20 resize-none" required></textarea>
+                                <textarea name="message" rows="4" placeholder="How can we help?" class="form-textarea w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors placeholder:text-dark dark:text-bone dark:placeholder:text-bone/35 resize-none" required></textarea>
                                 <span class="form-error text-[10px] text-red-500 font-mono absolute -bottom-5 left-0 opacity-0 transition-opacity">Message cannot be empty.</span>
                             </div>
                             <button type="submit" class="w-full py-6 bg-gold text-dark focus:text-dark group-hover:text-dark font-black uppercase tracking-widest hover:bg-bone transition-all duration-500">
@@ -173,7 +177,7 @@
         </section>
         
         <!-- Google Maps Placeholder -->
-        <section class="min-h-[60vh] flex flex-col snap-start pb-24">
+        <section class="min-h-[45vh] flex flex-col snap-start pb-12 sm:pb-16">
             <div class="container mx-auto px-6 h-full">
                 <div class="w-full h-[60vh] bg-dark/5 dark:bg-white/5 border border-dark/10 dark:border-white/10 relative group overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 rounded-2xl shadow-2xl">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2851929272805!2d-73.9934661!3d40.7139268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bb30508930b%3A0xe5a363a033da985c!2sCanal%20St%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1711200000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

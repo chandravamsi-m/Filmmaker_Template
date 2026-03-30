@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scene Not Found | Marcus Holloway</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +19,9 @@
     
     <!-- External Styles -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/theme-light.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -30,19 +34,19 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-dark group-hover:text-dark">Skip to content</a>
 
     <!-- Navigation -->
-    <header class="glass-header dark" id="navbar">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
+    <header class="glass-header dark sticky top-0" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="index.html" class="text-xl sm:text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
                 M/H <span class="hidden sm:inline ml-2 text-sm font-sans font-normal tracking-widest uppercase opacity-60">Filmmaking</span>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center space-x-12">
+            <nav class="hidden lg:flex items-center space-x-10">
                 <div class="relative group">
                     <button class="nav-link flex items-center gap-2 text-white/80">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
                     <div class="absolute top-full left-0 mt-4 w-48 bg-dark border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
-                        <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/60 hover:text-gold hover:bg-white/5 transition-colors">Cinematic Home</a>
-                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/60 hover:text-gold hover:bg-white/5 transition-colors">Editorial Home</a>
+                        <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/40 hover:text-gold hover:bg-white/5 transition-all">Cinematic Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/40 hover:text-gold hover:bg-white/5 transition-all">Editorial Home</a>
                     </div>
                 </div>
                 <a href="about.html" class="nav-link text-white/80">About</a>
@@ -54,9 +58,13 @@
             </nav>
 
             <!-- Actions -->
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 sm:gap-4">
                 <!-- RTL Toggle -->
-                <button id="rtl-toggle" class="hover:text-gold transition-colors text-sm font-mono text-white/40" title="Toggle RTL">RTL</button>
+                <button id="rtl-toggle" class="hover:text-gold transition-colors text-[10px] sm:text-sm font-mono text-white/40" title="Toggle RTL">RTL</button>
+                <!-- Dark Mode -->
+                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon text-xs sm:text-base"></i>
+                </button>
                 <!-- Mobile Menu Toggle -->
                 <button id="mobile-toggle" class="lg:hidden hover:text-gold text-2xl text-white/80">
                     <i class="fas fa-bars-staggered"></i>
@@ -71,18 +79,27 @@
             <i class="fas fa-times"></i>
         </button>
         <div class="flex flex-col items-center space-y-8 text-center text-white/60">
-            <a href="index.html" class="text-4xl font-serif hover:text-gold">Home</a>
-            <a href="about.html" class="text-4xl font-serif hover:text-gold">About</a>
-            <a href="portfolio.html" class="text-4xl font-serif hover:text-gold">Portfolio</a>
-            <a href="gallery.html" class="text-4xl font-serif hover:text-gold">Gallery</a>
-            <a href="tools.html" class="text-4xl font-serif hover:text-gold">Tools</a>
-            <a href="services.html" class="text-4xl font-serif hover:text-gold">Services</a>
-            <a href="contact.html" class="text-4xl font-serif hover:text-gold">Contact</a>
+            <!-- Home with Dropdown -->
+            <div class="mobile-nav-item flex flex-col items-center">
+                <button class="mobile-submenu-toggle text-4xl font-serif hover:text-gold flex items-center gap-4 transition-colors text-white/60">
+                    Home <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-submenu hidden flex-col items-center space-y-4 mt-6 overflow-hidden transition-all duration-300">
+                    <a href="index.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Cinematic Home</a>
+                    <a href="home-2.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Editorial Home</a>
+                </div>
+            </div>
+            <a href="about.html" class="text-4xl font-serif text-white/60 hover:text-gold">About</a>
+            <a href="portfolio.html" class="text-4xl font-serif text-white/60 hover:text-gold">Portfolio</a>
+            <a href="gallery.html" class="text-4xl font-serif text-white/60 hover:text-gold">Gallery</a>
+            <a href="tools.html" class="text-4xl font-serif text-white/60 hover:text-gold">Tools</a>
+            <a href="services.html" class="text-4xl font-serif text-white/60 hover:text-gold">Services</a>
+            <a href="contact.html" class="text-4xl font-serif text-white/60 hover:text-gold">Contact</a>
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
+    <main id="main-content" class="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
         <!-- Background: Cinematic Noir -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-dark"></div>
@@ -141,11 +158,31 @@
     <!-- Footer -->
     <footer class="bg-bone dark:bg-dark/80 backdrop-blur-xl pt-16 pb-12 border-t border-dark/5 dark:border-white/5 reveal-up">
         <div class="container mx-auto px-6">
-            
+            <!-- Next Project CTA (Clean & Simple) -->
+            <div class="py-16 mb-16 border-y border-dark/5 dark:border-white/5 reveal-up">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12 group cursor-pointer transition-all">
+                    <div class="max-w-xl text-center md:text-left">
+                        <span class="font-mono text-gold text-[10px] uppercase tracking-[0.6em] mb-4 block">04. The Next Vision</span>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-dark dark:text-bone tracking-tight leading-tight">
+                            Ready to tell your story? <span class="italic text-gold/60 underline decoration-gold/20 underline-offset-8">Let's connect.</span>
+                        </h2>
+                    </div>
+                    
+                    <a href="contact.html" class="flex flex-col items-center md:items-end gap-6 group">
+                        <p class="text-dark/40 dark:text-bone/40 text-xs font-mono uppercase tracking-[0.3em] overflow-hidden flex flex-col items-end">
+                            <span class="translate-y-0 group-hover:-translate-y-full transition-transform duration-500">Currently Booking</span>
+                            <span class="translate-y-full group-hover:translate-y-0 transition-transform duration-500 absolute">2026/27 seasons</span>
+                        </p>
+                        <div class="w-20 h-20 rounded-full border border-dark/10 dark:border-white/10 flex items-center justify-center group-hover:bg-gold group-hover:border-gold group-hover:text-dark transition-all duration-700 -rotate-45 group-hover:rotate-0 shadow-lg group-active:scale-95">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24 pt-24 border-t border-dark/5 dark:border-white/5">
-                <div class="space-y-8 text-left">
-                    <a href="index.html" class="text-3xl font-serif font-black tracking-tighter text-dark dark:text-bone hover:text-gold transition-colors block">M/H</a>
+                <div class="space-y-8">
+                    <a href="index.html" class="text-3xl font-serif font-black tracking-tighter text-dark dark:text-bone hover:text-gold transition-colors">M/H</a>
                     <p class="text-dark dark:text-bone/40 max-w-xs leading-relaxed font-light text-base italic">
                         Capturing the raw essence of human stories across the globe.
                     </p>
@@ -157,7 +194,7 @@
                 </div>
 
                 <!-- Exploration -->
-                <div class="text-left">
+                <div>
                     <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Exploration</h4>
                     <ul class="space-y-4 text-sm font-mono text-dark dark:text-bone/40">
                         <li><a href="index.html" class="hover:text-gold transition-colors block">Home Version 1</a></li>
@@ -168,7 +205,7 @@
                 </div>
 
                 <!-- Studio -->
-                <div class="text-left">
+                <div>
                     <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Studio</h4>
                     <ul class="space-y-4 text-sm font-mono text-dark dark:text-bone/40">
                         <li><a href="about.html" class="hover:text-gold transition-colors block">The Story</a></li>
@@ -179,7 +216,7 @@
                 </div>
 
                 <!-- Connect -->
-                <div class="text-left">
+                <div>
                     <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Connect</h4>
                     <div class="space-y-6">
                         <p class="text-sm font-mono text-dark dark:text-bone/40 leading-loose">

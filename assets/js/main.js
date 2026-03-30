@@ -54,14 +54,50 @@ function initMobileMenu() {
     menu.classList.remove('translate-x-0');
     menu.classList.add(isRTL ? '-translate-x-full' : 'translate-x-full');
     document.body.style.overflow = '';
+    
+    // Reset any open submenus
+    document.querySelectorAll('.mobile-submenu').forEach(sub => {
+      sub.classList.add('hidden');
+      sub.classList.remove('flex');
+    });
+    document.querySelectorAll('.mobile-submenu-toggle i').forEach(icon => {
+      gsap.to(icon, { rotation: 0, duration: 0.1 });
+    });
   };
 
   toggle.addEventListener('click', openMenu);
   close.addEventListener('click', closeMenu);
 
-  // Close menu when clicking a link
+  // Close menu when clicking a link (but not if it's a submenu toggle)
   menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', (e) => {
+      if (!link.classList.contains('mobile-submenu-toggle')) {
+         closeMenu();
+      }
+    });
+  });
+
+  // Handle Submenus
+  const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
+  submenuToggles.forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', () => {
+      const submenu = toggleBtn.nextElementSibling;
+      const icon = toggleBtn.querySelector('i');
+      const isOpen = !submenu.classList.contains('hidden');
+
+      if (!isOpen) {
+        submenu.classList.remove('hidden');
+        submenu.classList.add('flex');
+        gsap.fromTo(submenu, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.out' });
+        gsap.to(icon, { rotation: 180, duration: 0.3 });
+      } else {
+        gsap.to(submenu, { height: 0, opacity: 0, duration: 0.3, ease: 'power2.in', onComplete: () => {
+          submenu.classList.add('hidden');
+          submenu.classList.remove('flex');
+        }});
+        gsap.to(icon, { rotation: 0, duration: 0.3 });
+      }
+    });
   });
 
   // Close on Escape key

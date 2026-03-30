@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Marcus Holloway - Insights on Documentary Filmmaking</title>
     <meta name="description" content="Read insights, behind-the-scenes stories, and technical reflections on documentary filmmaking by Marcus Holloway. Stay updated with the latest in cinematic storytelling.">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,9 +51,9 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-dark group-hover:text-dark">Skip to content</a>
 
     <!-- Navigation -->
-    <header class="glass-header dark" id="navbar">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
+    <header class="glass-header dark sticky top-0" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="index.html" class="text-xl sm:text-2xl font-serif font-black tracking-tighter hover:text-gold transition-colors text-white">
                 M/H <span class="hidden sm:inline ml-2 text-sm font-sans font-normal tracking-widest uppercase opacity-60">Filmmaking</span>
             </a>
 
@@ -75,12 +76,12 @@
             </nav>
 
             <!-- Actions -->
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 sm:gap-4">
                 <!-- RTL Toggle -->
-                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-sm font-mono" title="Toggle RTL">RTL</button>
+                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-[10px] sm:text-sm font-mono" title="Toggle RTL">RTL</button>
                 <!-- Dark Mode -->
-                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
-                    <i class="fas fa-moon"></i>
+                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon text-xs sm:text-base"></i>
                 </button>
                 <!-- Mobile Menu Toggle -->
                 <button id="mobile-toggle" class="lg:hidden text-white/80 hover:text-gold text-2xl">
@@ -96,7 +97,16 @@
             <i class="fas fa-times"></i>
         </button>
         <div class="flex flex-col items-center space-y-8 text-center text-white/60">
-            <a href="index.html" class="text-4xl font-serif hover:text-gold">Home</a>
+            <!-- Home with Dropdown -->
+            <div class="mobile-nav-item flex flex-col items-center">
+                <button class="mobile-submenu-toggle text-4xl font-serif hover:text-gold flex items-center gap-4 transition-colors text-white/60">
+                    Home <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-submenu hidden flex-col items-center space-y-4 mt-6 overflow-hidden transition-all duration-300">
+                    <a href="index.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Cinematic Home</a>
+                    <a href="home-2.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Editorial Home</a>
+                </div>
+            </div>
             <a href="about.html" class="text-4xl font-serif hover:text-gold">About</a>
             <a href="portfolio.html" class="text-4xl font-serif hover:text-gold">Portfolio</a>
             <a href="gallery.html" class="text-4xl font-serif hover:text-gold">Gallery</a>
@@ -107,19 +117,19 @@
         </div>
     </div>
 
-    <main id="main-content" class="pt-32">
+    <main id="main-content" class="pt-24 sm:pt-32">
         <!-- Blog Hero -->
-        <section class="relative h-[60vh] flex items-center justify-center overflow-hidden mb-24">
+        <section class="relative h-[36vh] sm:h-[48vh] flex items-center justify-center overflow-hidden mb-8 sm:mb-14">
             <img src="../assets/images/blog-hero.jpg" class="absolute inset-0 w-full h-full object-cover grayscale brightness-50" alt="Cinematic film editing workspace">
-            <div class="relative z-10 text-center container mx-auto px-6">
-                <p class="font-mono text-gold text-xs uppercase tracking-[0.5em] mb-6 reveal-up">Journal</p>
-                <h1 class="text-6xl md:text-8xl font-black text-bone reveal-up">THE CUTTING ROOM.</h1>
+            <div class="relative z-10 text-center container mx-auto px-4 sm:px-6">
+                <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-[0.5em] mb-4 sm:mb-6 reveal-up">Journal</p>
+                <h1 class="text-4xl sm:text-6xl md:text-8xl font-black text-bone reveal-up">THE CUTTING ROOM.</h1>
             </div>
         </section>
 
         <!-- Blog Feed -->
-        <section class="container mx-auto px-6 pb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <section class="container mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
                 <!-- Blog Post 1 -->
                 <article class="group reveal-up">
                     <div class="aspect-video overflow-hidden mb-6 relative bg-surface">
