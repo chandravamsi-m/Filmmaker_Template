@@ -1,269 +1,308 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Marcus Holloway Documentary Studio</title>
-  <meta name="description"
-    content="Explore documentary filmmaking services by Marcus Holloway: development, field production, editing, and festival delivery for broadcast and digital platforms.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://filmmaker-template.netlify.app/pages/services.html">
-
-  <meta property="og:title" content="Services | Marcus Holloway Documentary Studio">
-  <meta property="og:description" content="Development, production, post, and delivery services for premium documentary projects.">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=1200&q=80&auto=format&fit=crop">
-  <meta property="og:type" content="website">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Holloway Documentary Studio",
-    "url": "https://filmmaker-template.netlify.app/pages/services.html",
-    "description": "Documentary development, production, post-production and festival delivery services.",
-    "areaServed": "Worldwide"
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/dark-mode.css">
-  <link rel="stylesheet" href="../assets/css/rtl.css">
-</head>
-
-<body>
-
-  <a href="#main-content" class="sr-only skip-link">Skip to main content</a>
-
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Marcus Holloway</a>
-      <ul class="nav-links">
-        <li class="nav-item nav-item--dropdown">
-          <a href="index.html">Home</a>
-          <ul class="nav-dropdown">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
-        
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle dark/light mode">
-          <i class="fas fa-sun"></i>
-        </button>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home 1</a>
-    <a href="home-2.html">Home 2</a>
-    <a href="about.html">About</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Marcus Holloway - Production & Narrative Strategy</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta name="description" content="Professional documentary production services including directing, cinematography, and post-production. Elevating stories through cinematic vision and editorial rigor.">
     
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/config.js"></script>
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/theme-light.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
 
-  <main id="main-content">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-bone text-dark dark:bg-dark dark:text-bone font-sans antialiased selection:bg-gold selection:text-dark overflow-x-hidden">
+    <div class="grain-overlay"></div>
 
-    <section class="page-hero">
-      <div class="container">
-        <p class="section-label">Services</p>
-        <h1>Documentary Services</h1>
-        <p class="text-muted" style="max-width: 700px; font-size: 1.1rem; line-height: 1.7;">
-          End-to-end documentary production for brands, broadcasters, non-profits, and independent producers.
-          From concept and research to final delivery, each project is built for cinematic quality and distribution readiness.
-        </p>
-      </div>
-    </section>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-dark group-hover:text-dark">Skip to content</a>
 
-    <section class="section section--surface" id="services-grid">
-      <div class="container">
-        <p class="section-label reveal">What We Offer</p>
-        <h2 class="section-heading reveal">Core Service Lines</h2>
+    <!-- Navigation -->
+    <header class="glass-header dark sticky top-0" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="index.html" class="site-logo text-xl sm:text-2xl hover:text-gold text-white">
+                M/H <span class="site-logo__tagline hidden sm:inline">Filmmaking</span>
+            </a>
 
-        <div class="feature-cards reveal reveal-stagger">
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-lightbulb"></i></div>
-            <h4 class="feature-card__title">Development</h4>
-            <p class="feature-card__desc">Story research, treatment writing, interview strategy, and production planning before cameras roll.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-video"></i></div>
-            <h4 class="feature-card__title">Field Production</h4>
-            <p class="feature-card__desc">On-location directing, cinematography, and sound capture in controlled or challenging environments.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-scissors"></i></div>
-            <h4 class="feature-card__title">Post-Production</h4>
-            <p class="feature-card__desc">Narrative editing, color finishing, sound design, subtitle support, and final master prep.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-trophy"></i></div>
-            <h4 class="feature-card__title">Festival Delivery</h4>
-            <p class="feature-card__desc">Submission packaging, screener strategy, press assets, and exhibitor-ready technical outputs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-10">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-2 text-white/80">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-dark border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
+                        <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/40 hover:text-gold hover:bg-white/5 transition-all">Cinematic Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/40 hover:text-gold hover:bg-white/5 transition-all">Editorial Home</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link text-white/80">About</a>
+                <a href="portfolio.html" class="nav-link text-white/80">Portfolio</a>
+                <a href="gallery.html" class="nav-link text-white/80">Gallery</a>
+                <a href="tools.html" class="nav-link text-white/80">Tools</a>
+                <a href="services.html" class="nav-link active text-white">Services</a>
+                <a href="contact.html" class="nav-link text-white/80">Contact</a>
+            </nav>
 
-    <section class="section">
-      <div class="container">
-        <p class="section-label text-center reveal">Process</p>
-        <h2 class="section-heading text-center reveal">How Projects Move Forward</h2>
-
-        <div class="timeline reveal">
-          <div class="timeline-item">
-            <div class="timeline-item__year">Step 01</div>
-            <div class="timeline-item__title">Discovery Session</div>
-            <div class="timeline-item__desc">Define goals, target audience, and distribution pathway to align creative and business outcomes.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-item__year">Step 02</div>
-            <div class="timeline-item__title">Production Blueprint</div>
-            <div class="timeline-item__desc">Build schedules, crew plan, permits, interview shortlists, and risk contingencies.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-item__year">Step 03</div>
-            <div class="timeline-item__title">Filming & Capture</div>
-            <div class="timeline-item__desc">Capture principal footage and cinematic b-roll with clear narrative intent.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-item__year">Step 04</div>
-            <div class="timeline-item__title">Editorial & Delivery</div>
-            <div class="timeline-item__desc">Edit, finish, review, and deliver masters optimized for festivals, streaming, or social rollouts.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--surface">
-      <div class="container">
-        <p class="section-label text-center reveal">Service Packages</p>
-        <h2 class="section-heading text-center reveal">Engagement Models</h2>
-
-        <div class="feature-cards reveal reveal-stagger">
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-file-video"></i></div>
-            <h4 class="feature-card__title">Single Film</h4>
-            <p class="feature-card__desc">Best for one campaign or one issue-focused documentary deliverable.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-clapperboard"></i></div>
-            <h4 class="feature-card__title">Mini Series</h4>
-            <p class="feature-card__desc">Multi-episode documentary format with consistent visual language and release cadence.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-handshake"></i></div>
-            <h4 class="feature-card__title">Retainer</h4>
-            <p class="feature-card__desc">Ongoing production support for long-term storytelling and brand journalism.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-comments"></i></div>
-            <h4 class="feature-card__title">Creative Consulting</h4>
-            <p class="feature-card__desc">Pre-production consulting, editorial feedback, and festival strategy advisory.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <p class="section-label text-center reveal">Integration Ready</p>
-        <h2 class="section-heading text-center reveal">Booking &amp; Payment Placeholders</h2>
-        <div class="feature-cards reveal reveal-stagger">
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-calendar-alt"></i></div>
-            <h4 class="feature-card__title">Booking Calendar</h4>
-            <p class="feature-card__desc">Connect Calendly, Google Calendar, or custom booking API here.</p>
-            <div class="integration-placeholder">[ Calendar Integration Placeholder ]</div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card__icon"><i class="fas fa-credit-card"></i></div>
-            <h4 class="feature-card__title">Payment Buttons</h4>
-            <p class="feature-card__desc">Attach Stripe and PayPal checkout flows for deposits and service retainers.</p>
-            <div class="cta-banner__actions" style="justify-content: center; margin-top: var(--space-sm);">
-              <a href="#" class="btn btn-primary btn-sm" aria-disabled="true"><i class="fab fa-stripe-s"></i> Stripe</a>
-              <a href="#" class="btn btn-secondary btn-sm" aria-disabled="true"><i class="fab fa-paypal"></i> PayPal</a>
+            <!-- Actions -->
+            <div class="flex items-center gap-2 sm:gap-4">
+                <!-- RTL Toggle -->
+                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-[10px] sm:text-sm font-mono" title="Toggle RTL">RTL</button>
+                <!-- Dark Mode -->
+                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon text-xs sm:text-base"></i>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-toggle" class="lg:hidden text-white/80 hover:text-gold text-2xl">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section class="section cta-banner">
-      <div class="container">
-        <div class="cta-banner__content reveal">
-          <p class="section-label">Start a Project</p>
-          <h2>Need a Documentary Team?</h2>
-          <p>Share your story objective and timeline. We will recommend the right service model and production roadmap.</p>
-          <div class="cta-banner__actions">
-            <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Request Proposal</a>
-            <a href="films.html" class="btn btn-secondary">View Portfolio</a>
-          </div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0a0a0a] flex flex-col items-center justify-center translate-x-full transition-transform duration-700 ease-in-out">
+        <button id="mobile-close" class="absolute top-8 right-8 text-3xl text-white/60 hover:text-gold transition-colors">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col items-center space-y-8 text-center text-white/60">
+            <a href="index.html" class="site-logo text-2xl sm:text-3xl hover:text-gold text-white">
+                M/H <span class="site-logo__tagline hidden sm:inline">Filmmaking</span>
+            </a>
+            <!-- Home with Dropdown -->
+            <div class="mobile-nav-item flex flex-col items-center">
+                <button class="mobile-submenu-toggle text-4xl font-serif hover:text-gold flex items-center gap-4 transition-colors">
+                    Home <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-submenu hidden flex-col items-center space-y-4 mt-6 overflow-hidden transition-all duration-300">
+                    <a href="index.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Cinematic Home</a>
+                    <a href="home-2.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Editorial Home</a>
+                </div>
+            </div>
+            <a href="about.html" class="text-4xl font-serif hover:text-gold">About</a>
+            <a href="portfolio.html" class="text-4xl font-serif hover:text-gold">Portfolio</a>
+            <a href="gallery.html" class="text-4xl font-serif hover:text-gold">Gallery</a>
+            <a href="tools.html" class="text-4xl font-serif hover:text-gold">Tools</a>
+            <a href="services.html" class="text-4xl font-serif text-gold font-bold">Services</a>
+            <a href="contact.html" class="text-4xl font-serif hover:text-gold">Contact</a>
         </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Marcus Holloway</h4>
-          <p>Documentary filmmaker. Telling the stories the world has not heard yet.</p>
-          <div class="social-links">
-            <a href="https://instagram.com/marcus.holloway.films" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://vimeo.com/marcusholloway" target="_blank" rel="noopener noreferrer" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-            <li><a href="about.html">About</a></li>
-            
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><a href="mailto:contact@marcusholloway.com">contact@marcusholloway.com</a></p>
-          <p>New York, USA</p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>&copy; 2026 Marcus Holloway. All rights reserved.</span>
-        <span>Made with HTML, CSS &amp; JS &middot; <a href="https://validator.w3.org" target="_blank" rel="noopener noreferrer">W3C Valid</a></span>
-      </div>
     </div>
-  </footer>
 
-  <script src="../assets/js/main.js"></script>
+    <main id="main-content" class="pt-24 sm:pt-36 pb-8 sm:pb-14">
+        <div class="container mx-auto px-4 sm:px-6 mb-10 sm:mb-16 min-h-[32vh] sm:min-h-[46vh] flex flex-col justify-center items-center text-center snap-start">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 sm:mb-12 leading-tight reveal-up">Capabilities.</h1>
+            <p class="max-w-2xl text-dark dark:text-bone/40 text-base sm:text-lg md:text-xl font-light leading-relaxed reveal-up">From concept to final grade, we provide end-to-end production services for high-impact documentaries and editorial content.</p>
+        </div>
+
+        <!-- Service 1: Direction -->
+        <section class="service-section py-8 sm:py-12 flex items-center snap-start">
+            <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                 <div class="space-y-8 sm:space-y-12">
+                    <span class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-widest block reveal-up">01 / Creative</span>
+                    <h2 class="text-3xl sm:text-5xl md:text-7xl font-black leading-tight reveal-up">Directing & <br> Narrative Strategy</h2>
+                    <p class="text-dark dark:text-bone/60 text-lg sm:text-xl leading-relaxed font-light reveal-up">Crafting a cohesive vision is the core of every project. We handle story architecture, subject research, and the delicate art of interview direction.</p>
+                    <ul class="service-checklist grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 reveal-up">
+                        <li><i class="fas fa-check text-gold"></i><span>Story Development</span></li>
+                        <li><i class="fas fa-check text-gold"></i><span>Scripting & Treatment</span></li>
+                        <li><i class="fas fa-check text-gold"></i><span>Interview Direction</span></li>
+                    </ul>
+                 </div>
+                 <div class="aspect-square bg-white dark:bg-surface overflow-hidden relative shadow-2xl reveal-up rounded-xl">
+                     <img src="../assets/images/camera-documentary.webp" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 hover:scale-105" alt="Directing">
+                 </div>
+            </div>
+        </section>
+
+        <!-- Service 2: Cinematography -->
+        <section class="service-section py-8 sm:py-12 flex items-center snap-start">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                 <div class="lg:order-2 space-y-12">
+                    <span class="font-mono text-gold text-xs uppercase tracking-widest block reveal-up">02 / Technical</span>
+                    <h2 class="text-3xl sm:text-5xl md:text-7xl font-black leading-tight reveal-up">Cinematography <br> & Production</h2>
+                    <p class="text-dark dark:text-bone/60 text-xl leading-relaxed font-light reveal-up">Immersive, high-end visuals are non-negotiable. Using elite cinema packages, we capture reality with the precision and beauty of a feature film.</p>
+                    <ul class="service-checklist reveal-up">
+                        <li><i class="fas fa-check text-gold"></i><span>8K/4K Principal Photography</span></li>
+                        <li><i class="fas fa-check text-gold"></i><span>Lighting Design</span></li>
+                        <li><i class="fas fa-check text-gold"></i><span>Remote Scouting</span></li>
+                    </ul>
+                 </div>
+                 <div class="aspect-square bg-white dark:bg-surface overflow-hidden relative lg:order-1 shadow-2xl reveal-up">
+                      <img src="../assets/images/film-production.webp" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 hover:scale-105" alt="Cinematography and Production">
+                 </div>
+            </div>
+        </section>
+
+         <!-- Service 3: Post -->
+        <section class="service-section py-8 sm:py-12 flex items-center snap-start border-b border-dark/5 dark:border-white/5">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                 <div class="space-y-12">
+                    <span class="font-mono text-gold text-xs uppercase tracking-widest block reveal-up">03 / Finishing</span>
+                    <h2 class="text-3xl sm:text-5xl md:text-7xl font-black leading-tight reveal-up">Post-Production <br> & Color</h2>
+                    <p class="text-dark dark:text-bone/60 text-xl leading-relaxed font-light reveal-up">Great films are made in the edit. We provide comprehensive post-production workflows, including creative editing, color grading, and sound design.</p>
+                    <ul class="service-checklist reveal-up">
+                        <li><i class="fas fa-check text-gold"></i><span>Creative Editing</span></li>
+                        <li><i class="fas fa-check text-gold"></i><span>Color Grading (DaVinci Resolve)</span></li>
+                        <li><i class="fas fa-check text-gold"></i><span>Festival-ready delivery workflow</span></li>
+                    </ul>
+                 </div>
+                 <div class="aspect-square bg-white dark:bg-surface overflow-hidden relative shadow-2xl reveal-up">
+                      <img src="../assets/images/photographer-camera.webp" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 hover:scale-105" alt="Post Production">
+                 </div>
+            </div>
+        </section>
+         <!-- Booking & Payment Integrations -->
+         <section class="py-14 sm:py-16 bg-bone dark:bg-dark/50 snap-start">
+             <div class="container mx-auto px-6 text-center">
+                 <div class="max-w-4xl mx-auto space-y-10 sm:space-y-12">
+                     <div class="reveal-up">
+                         <h2 class="text-4xl md:text-6xl font-black mb-8">Ready to Start?</h2>
+                         <p class="text-dark dark:text-bone/60 text-lg md:text-xl font-light">Book a discovery call to discuss your project or secure your production dates today.</p>
+                     </div>
+                     
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+                         <!-- Calendar Integration Point -->
+                         <div class="service-cta-card p-8 sm:p-10 lg:p-12 border border-dark/10 dark:border-white/10 bg-white dark:bg-surface rounded-2xl shadow-xl hover:border-gold transition-all group reveal-up">
+                             <div class="service-cta-icon">
+                                 <i class="fas fa-calendar-alt text-4xl text-gold"></i>
+                             </div>
+                             <div class="service-cta-copy">
+                                 <h4 class="text-2xl mb-6">Discovery Call</h4>
+                                 <p class="text-dark dark:text-bone/40 mb-10 text-sm">Schedule a 30-minute consultation via Calendly.</p>
+                                 <a href="#" class="service-cta-button btn-primary">Book Call <i class="fas fa-arrow-right"></i></a>
+                             </div>
+                         </div>
+                         
+                         <!-- Payment Integration Point -->
+                         <div class="service-cta-card p-8 sm:p-10 lg:p-12 border border-dark/10 dark:border-white/10 bg-white dark:bg-surface rounded-2xl shadow-xl hover:border-gold transition-all group reveal-up">
+                             <div class="service-cta-icon">
+                                 <i class="fas fa-credit-card text-4xl text-gold"></i>
+                             </div>
+                             <div class="service-cta-copy">
+                                 <h4 class="text-2xl mb-6">Secure Your Date</h4>
+                                 <p class="text-dark dark:text-bone/40 mb-10 text-sm">Submit a production deposit via Stripe/PayPal.</p>
+                                 <a href="#" class="service-cta-button btn-secondary">Pay Deposit <i class="fas fa-shield-alt"></i></a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-bone dark:bg-dark/80 backdrop-blur-xl pt-16 pb-12 border-t border-dark/5 dark:border-white/5 reveal-up">
+        <div class="container mx-auto px-6">
+            <!-- Next Project CTA (Clean & Simple) -->
+            <div class="py-16 mb-16 border-y border-dark/5 dark:border-white/5 reveal-up">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12 group cursor-pointer transition-all">
+                    <div class="max-w-xl text-center md:text-left">
+                        <span class="font-mono text-gold text-[10px] uppercase tracking-[0.6em] mb-4 block">04. The Next Vision</span>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-dark dark:text-bone tracking-tight leading-tight">
+                            Ready to tell your story? <span class="italic text-gold/60 underline decoration-gold/20 underline-offset-8">Let's connect.</span>
+                        </h2>
+                    </div>
+                    
+                    <a href="contact.html" class="flex flex-col items-center md:items-end gap-6 group">
+                        <p class="text-dark/40 dark:text-bone/40 text-xs font-mono uppercase tracking-[0.3em] overflow-hidden flex flex-col items-end">
+                            <span class="translate-y-0 group-hover:-translate-y-full transition-transform duration-500">Currently Booking</span>
+                            <span class="translate-y-full group-hover:translate-y-0 transition-transform duration-500 absolute">2026/27 seasons</span>
+                        </p>
+                        <div class="w-20 h-20 rounded-full border border-dark/10 dark:border-white/10 flex items-center justify-center group-hover:bg-gold group-hover:border-gold group-hover:text-dark transition-all duration-700 -rotate-45 group-hover:rotate-0 shadow-lg group-active:scale-95">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24 pt-24 border-t border-dark/5 dark:border-white/5">
+                <div class="space-y-8">
+                    <a href="index.html" class="site-logo text-3xl text-dark dark:text-bone hover:text-gold">
+                        M/H <span class="site-logo__tagline hidden sm:inline">Filmmaking</span>
+                    </a>
+                    <p class="text-dark dark:text-bone/40 max-w-xs leading-relaxed font-light text-base italic">
+                        Capturing the raw essence of human stories across the globe.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/" target="_blank" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-instagram"></i></a>
+                        <a href="https://vimeo.com/" target="_blank" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="https://www.imdb.com/" target="_blank" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-imdb"></i></a>
+                    </div>
+                </div>
+
+                <!-- Exploration -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Exploration</h4>
+                    <ul class="space-y-4 text-sm font-mono text-dark dark:text-bone/40">
+                        <li><a href="index.html" class="hover:text-gold transition-colors block">Home Version 1</a></li>
+                        <li><a href="home-2.html" class="hover:text-gold transition-colors block">Home Version 2</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold transition-colors block">Portfolio Archive</a></li>
+                        <li><a href="gallery.html" class="hover:text-gold transition-colors block">Behind Scenes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Studio -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Studio</h4>
+                    <ul class="space-y-4 text-sm font-mono text-dark dark:text-bone/40">
+                        <li><a href="about.html" class="hover:text-gold transition-colors block">The Story</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors block active font-bold text-gold">Services</a></li>
+                        <li><a href="tools.html" class="hover:text-gold transition-colors block">Equipment</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors block">Get in Touch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Connect</h4>
+                    <div class="space-y-6">
+                        <p class="text-sm font-mono text-dark dark:text-bone/40 leading-loose">
+                            Brooklyn, New York<br>
+                            contact@marcholloway.com
+                        </p>
+                        <form class="relative">
+                            <input type="email" placeholder="Newsletter" class="w-full bg-dark/5 dark:bg-white/5 border border-dark/10 dark:border-white/10 px-4 py-3 text-xs font-mono focus:outline-none focus:border-gold transition-all text-dark dark:text-bone" required>
+                            <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 text-gold hover:text-dark dark:text-bone transition-colors" aria-label="Subscribe Newsletter"><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-dark/5 dark:border-white/5 gap-12">
+                <div class="flex flex-wrap gap-12 justify-center md:justify-start">
+                    <p class="text-dark dark:text-bone/20 font-mono text-xs uppercase tracking-[0.3em]">&copy; 2026 Marcus Holloway. Crafted with precision.</p>
+                    <a href="#" class="text-dark dark:text-bone/20 hover:text-gold font-mono text-xs uppercase tracking-[0.3em] transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-dark dark:text-bone/20 hover:text-gold font-mono text-xs uppercase tracking-[0.3em] transition-colors">Terms of Vision</a>
+                </div>
+                <a href="#navbar" class="group flex items-center gap-4 text-dark dark:text-bone/20 hover:text-gold font-mono text-xs uppercase tracking-[0.3em] transition-all">
+                    <span>Back to Premiere</span>
+                    <div class="w-8 h-8 rounded-full border border-dark/5 dark:border-white/5 flex items-center justify-center group-hover:border-gold/50 transition-all text-dark dark:text-bone/20 group-hover:text-gold">
+                        <i class="fas fa-arrow-up text-[10px]"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
-

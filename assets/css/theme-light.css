@@ -1,0 +1,150 @@
+/* ==============================================
+   DARK MODE / LIGHT MODE OVERRIDES
+   Dark mode is the DEFAULT (variables in style.css).
+   This file defines the LIGHT MODE overrides.
+   ============================================== */
+
+body.light-mode {
+  --color-bg: #fcfaf7; /* Bone/Off-white */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f2ee;
+  --color-primary: #E8C547;
+  --color-primary-dark: #c4a230;
+  --color-accent-rgb: 232, 197, 71;
+  --color-gold: #E8C547;
+  --color-gold-rgb: 232 197 71;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666666;
+  --color-border: #e5e5e5;
+  --color-overlay: rgba(0,0,0,0.5);
+  --color-overlay-soft: rgba(255,255,255,0.4);
+  --color-overlay-strong: rgba(252,250,247,0.9);
+  --color-overlay-edge: rgba(252,250,247,0.6);
+  --color-bg-gradient-start: #fcfaf7;
+  --color-bg-gradient-end: #f2eee9;
+  /* Navbar must remain dark, removing light-mode overrides */
+  --color-dropdown-bg: rgba(20, 20, 20, 0.98);
+  --color-proof-border: rgba(26,24,20,0.1);
+
+  --color-proof-bg: rgba(255,255,255,0.7);
+  --color-skeleton-1: #f2ece5;
+  --color-skeleton-2: #e4ddd5;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 48px rgba(0,0,0,0.12);
+}
+
+/* Light mode specific adjustments */
+body.light-mode .hero-grain {
+  opacity: 0.04;
+}
+
+body.light-mode .navbar.scrolled {
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+
+body.light-mode .press-logo {
+  border-color: var(--color-border);
+}
+
+body.light-mode .map-section iframe {
+  filter: grayscale(0.3) contrast(1.05);
+}
+
+body.light-mode .screening-row:nth-child(even) {
+  background: rgba(0,0,0,0.02);
+}
+
+body.light-mode .screening-row:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Light mode overrides for new components */
+/* Ensure glass-header components are consistently dark regardless of theme body class */
+body.light-mode .glass-header,
+body.light-mode .glass-header.scrolled {
+  background: rgba(10, 10, 10, 0.98) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+body.light-mode .glass-header .nav-link,
+body.light-mode .glass-header .nav-link:hover,
+body.light-mode .glass-header .text-dark,
+body.light-mode .glass-header .text-2xl,
+body.light-mode .glass-header i,
+body.light-mode .glass-header button,
+body.light-mode .glass-header a {
+    color: #f5f5f5 !important;
+}
+
+body.light-mode .glass-header .nav-link.active,
+body.light-mode .glass-header .nav-link.active:hover {
+  color: var(--color-primary) !important;
+}
+
+body.light-mode .service-checklist {
+  color: rgba(26, 26, 26, 0.72);
+}
+
+body.light-mode .nav-dropdown a:hover,
+body.light-mode .nav-dropdown a.active {
+
+  background: rgba(var(--color-accent-rgb), 0.1);
+}
+
+body.light-mode .hero-proof span {
+  color: var(--color-text);
+}
+
+body.light-mode .section--surface,
+body.light-mode .section--alt {
+  border-color: rgba(var(--color-accent-rgb), 0.06);
+}
+
+body.light-mode .btn-primary:hover {
+  box-shadow: 0 0 20px rgba(var(--color-accent-rgb), 0.25), 0 4px 24px rgba(0,0,0,0.1);
+}
+
+body.light-mode .btn-secondary:hover {
+  box-shadow: 0 0 20px rgba(var(--color-accent-rgb), 0.2), 0 4px 24px rgba(0,0,0,0.1);
+}
+
+body.light-mode .film-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 30px rgba(var(--color-accent-rgb), 0.06);
+  border-color: rgba(var(--color-accent-rgb), 0.2);
+}
+
+body.light-mode .stat-box:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 0 20px rgba(var(--color-accent-rgb), 0.06);
+  border-color: rgba(var(--color-accent-rgb), 0.3);
+}
+
+body.light-mode .feature-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 0 24px rgba(var(--color-accent-rgb), 0.06);
+  border-color: rgba(var(--color-accent-rgb), 0.25);
+}
+
+body.light-mode .feature-card__icon {
+  background: rgba(var(--color-accent-rgb), 0.08);
+}
+
+body.light-mode .feature-card:hover .feature-card__icon {
+  background: rgba(var(--color-accent-rgb), 0.12);
+  box-shadow: 0 0 24px rgba(var(--color-accent-rgb), 0.1);
+}
+
+body.light-mode .testimonial:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+body.light-mode .press-logo:hover {
+  border-color: rgba(var(--color-accent-rgb), 0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+body.light-mode .cta-banner {
+  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(var(--color-accent-rgb), 0.04) 50%, var(--color-surface) 100%);
+  border-top: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
+}
+

@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Films | Marcus Holloway</title>
+    <title>Gallery | Marcus Holloway</title>
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
     <!-- Fonts -->
@@ -49,7 +49,7 @@
                 </div>
                 <a href="about.html" class="nav-link text-white/80">About</a>
                 <a href="portfolio.html" class="nav-link text-white/80">Portfolio</a>
-                <a href="gallery.html" class="nav-link text-white/80">Gallery</a>
+                <a href="gallery.html" class="nav-link active text-white">Gallery</a>
                 <a href="tools.html" class="nav-link text-white/80">Tools</a>
                 <a href="services.html" class="nav-link text-white/80">Services</a>
                 <a href="contact.html" class="nav-link text-white/80">Contact</a>
@@ -90,77 +90,64 @@
                     <a href="home-2.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Editorial Home</a>
                 </div>
             </div>
-            <a href="about.html" class="text-4xl font-serif hover:text-gold">About</a>
-            <a href="portfolio.html" class="text-4xl font-serif hover:text-gold">Portfolio</a>
-            <a href="gallery.html" class="text-4xl font-serif hover:text-gold">Gallery</a>
-            <a href="tools.html" class="text-4xl font-serif hover:text-gold">Tools</a>
-            <a href="services.html" class="text-4xl font-serif hover:text-gold">Services</a>
-            <a href="contact.html" class="text-4xl font-serif hover:text-gold">Contact</a>
+            <a href="about.html" class="text-4xl font-serif text-white/60 hover:text-gold">About</a>
+            <a href="portfolio.html" class="text-4xl font-serif text-white/60 hover:text-gold">Portfolio</a>
+            <a href="gallery.html" class="text-4xl font-serif text-gold font-bold">Gallery</a>
+            <a href="tools.html" class="text-4xl font-serif text-white/60 hover:text-gold">Tools</a>
+            <a href="services.html" class="text-4xl font-serif text-white/60 hover:text-gold">Services</a>
+            <a href="contact.html" class="text-4xl font-serif text-white/60 hover:text-gold">Contact</a>
         </div>
     </div>
 
     <main id="main-content" class="pt-24 sm:pt-36 pb-8 sm:pb-14">
         <!-- Page Header -->
         <div class="container mx-auto px-4 sm:px-6 mb-10 sm:mb-16 min-h-[32vh] sm:min-h-[46vh] flex flex-col justify-center snap-start">
-            <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-widest mb-4 sm:mb-8 reveal-up text-center lg:text-left">Archive</p>
-            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 sm:mb-8 reveal-up text-center lg:text-left">Films.</h1>
-            <p class="max-w-2xl text-dark dark:text-bone/40 text-base sm:text-lg md:text-xl font-light reveal-up text-center lg:text-left mx-auto lg:mx-0">
-                A curated body of work spanning feature-length documentaries, short films, and episodic series—each exploring the human condition through uncompromising storytelling.
+            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-4 sm:mb-8 text-center reveal-up">Stills.</h1>
+            <p class="max-w-2xl mx-auto text-dark dark:text-bone/40 text-base sm:text-lg md:text-xl font-light text-center reveal-up">
+                A visual archive of moments frozen in time—behind the scenes and cinematic captures. Every frame tells a story.
             </p>
         </div>
 
-        <!-- Filter Bar -->
-        <div class="container mx-auto px-4 sm:px-6 mb-12 sm:mb-16 flex flex-wrap gap-2 sm:gap-4 snap-start reveal-up">
-             <button class="filter-btn active px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="all">All</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="feature">Feature</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="short">Short</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="series">Series</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="commercial">Commercial</button>
-        </div>
-
-        <!-- Film Grid -->
-        <div class="container mx-auto px-6 mb-16 sm:mb-20">
-            <div class="grid grid-cols-1 gap-16 sm:gap-20" id="film-grid">
-                <!-- Film 1 -->
-                <div class="film-card group reveal-up" data-category="feature">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="lg:col-span-7 aspect-video bg-white dark:bg-surface overflow-hidden relative shadow-2xl">
-                             <img src="../assets/images/ocean-aerial.webp" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
-                             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                 <button class="w-24 h-24 rounded-full bg-gold text-dark flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform">
-                                     <i class="fas fa-play text-2xl"></i>
-                                 </button>
-                             </div>
-                        </div>
-                        <div class="lg:col-span-5 space-y-8">
-                            <span class="font-mono text-[10px] text-gold uppercase tracking-[0.3em] block">Feature Length / 2024</span>
-                            <h2 class="text-4xl md:text-6xl font-black group-hover:text-gold transition-colors">The Forgotten Shore</h2>
-                            <p class="text-dark dark:text-bone/40 text-lg font-light leading-relaxed">A coastal community fights to preserve their way of life against rising seas. Shot over eighteen months, following three families navigatig the impossible choice between ancestry and an uncertain future.</p>
-                            <div class="flex flex-wrap gap-4">
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono"><i class="fas fa-award mr-2 text-gold"></i> Sundance</span>
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono"><i class="fas fa-award mr-2 text-gold"></i> IDFA Winner</span>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Masonry-style Grid -->
+        <div class="container mx-auto px-6 mb-16 sm:mb-20 snap-start">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-8 sm:gap-10 space-y-8 sm:space-y-10" id="gallery-grid">
+                
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/film-production.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+                
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/gallery-film.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
                 </div>
 
-                <!-- Film 2 -->
-                <div class="film-card group reveal-up" data-category="short">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="lg:col-span-7 lg:order-2 aspect-video bg-white dark:bg-surface overflow-hidden relative shadow-2xl">
-                             <img src="../assets/images/concert-crowd.webp" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
-                        </div>
-                        <div class="lg:col-span-5 lg:order-1 space-y-8 lg:text-right">
-                            <span class="font-mono text-[10px] text-gold uppercase tracking-[0.3em] block">Short Film / 2023</span>
-                            <h2 class="text-4xl md:text-6xl font-black group-hover:text-gold transition-colors">Voices in the Dark</h2>
-                            <p class="text-dark dark:text-bone/40 text-lg font-light leading-relaxed">Inside a blind choir in rural Appalachia. An intimate portrait of community, faith, and the transformative power of music when sight is absent.</p>
-                            <div class="flex flex-wrap gap-4 lg:justify-end">
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono">Tribeca</span>
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono">SXSW</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/camera-documentary.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
                 </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/camera-lens.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/photographer-camera.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/film-noir.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+                
+                 <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/dark-cinema.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/cinematic-backdrop.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
+                <div class="break-inside-avoid overflow-hidden group shadow-2xl reveal-up">
+                    <img src="../assets/images/ocean-aerial.webp" class="w-full grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" alt="Gallery Image">
+                </div>
+
             </div>
         </div>
     </main>
@@ -213,7 +200,7 @@
                         <li><a href="index.html" class="hover:text-gold transition-colors block">Home Version 1</a></li>
                         <li><a href="home-2.html" class="hover:text-gold transition-colors block">Home Version 2</a></li>
                         <li><a href="portfolio.html" class="hover:text-gold transition-colors block">Portfolio Archive</a></li>
-                        <li><a href="gallery.html" class="hover:text-gold transition-colors block">Behind Scenes</a></li>
+                        <li><a href="gallery.html" class="hover:text-gold transition-colors block active font-bold text-gold">Behind Scenes</a></li>
                     </ul>
                 </div>
 

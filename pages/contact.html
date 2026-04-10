@@ -1,313 +1,292 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact &mdash; Marcus Holloway | Documentary Filmmaker</title>
-  <meta name="description"
-    content="Get in touch with Marcus Holloway for distribution inquiries, press accreditation, screening requests, and commercial collaborations.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://filmmaker-template.netlify.app/pages/contact.html">
-
-  <meta property="og:title" content="Contact Marcus Holloway &mdash; Documentary Filmmaker">
-  <meta property="og:description" content="For distribution inquiries, press accreditation, and screening requests.">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1518676590747-1e3dcf5a0f32?w=1200&q=80&auto=format&fit=crop">
-  <meta property="og:type" content="website">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/dark-mode.css">
-  <link rel="stylesheet" href="../assets/css/rtl.css">
-</head>
-
-<body>
-
-  <a href="#main-content" class="sr-only skip-link">Skip to main content</a>
-
-  <!-- ===================================================
-       SECTION: NAVIGATION
-       =================================================== -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Marcus Holloway</a>
-      <ul class="nav-links">
-        <li class="nav-item nav-item--dropdown">
-          <a href="index.html">Home</a>
-          <ul class="nav-dropdown">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
-        
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle dark/light mode">
-          <i class="fas fa-sun"></i>
-        </button>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home 1</a>
-    <a href="home-2.html">Home 2</a>
-    <a href="about.html">About</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Marcus Holloway - Award-Winning Documentary Filmmaker</title>
+    <meta name="description" content="Get in touch with Marcus Holloway for documentary projects, collaborations, and inquiries. Based in New York and available for assignments world-wide.">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/config.js"></script>
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/theme-light.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
 
-  <main id="main-content">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-bone text-dark dark:bg-dark dark:text-bone font-sans antialiased selection:bg-gold selection:text-dark overflow-x-hidden">
+    <div class="grain-overlay"></div>
 
-    <!-- ===================================================
-         SECTION: PAGE HEADER
-         =================================================== -->
-    <section class="page-hero">
-      <div class="container">
-        <p class="section-label">Inquiries</p>
-        <h1>Get In Touch</h1>
-        <p class="text-muted" style="max-width: 600px; font-size: 1.1rem;">
-          For distribution inquiries, press accreditation, and screening requests.
-        </p>
-      </div>
-    </section>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-dark group-hover:text-dark">Skip to content</a>
 
-    <!-- ===================================================
-         SECTION: CONTACT GRID
-         =================================================== -->
-    <section class="section" style="padding-top: 0;">
-      <div class="container">
-        <div class="contact-grid reveal">
-
-          <!-- Left Column: Contact Information -->
-          <div class="contact-info">
-            <div class="contact-info__item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email</strong><br>
-                <!-- TODO: Replace with your email -->
-                <a href="mailto:contact@marcusholloway.com">contact@marcusholloway.com</a>
-                <button class="copy-btn" data-email="contact@marcusholloway.com" aria-label="Copy email address">
-                  <i class="fas fa-copy"></i> Copy
-                </button>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <strong>Phone</strong><br>
-                <!-- TODO: Replace with your phone number -->
-                <a href="tel:+12125551234">+1 (212) 555-1234</a>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Location</strong><br>
-                <!-- TODO: Replace with your location -->
-                <span>New York, USA</span>
-              </div>
-            </div>
-
-            <hr class="divider">
-
-            <div class="contact-info__item">
-              <i class="fas fa-user-tie"></i>
-              <div>
-                <strong>Representation / Agent</strong><br>
-                <!-- TODO: Replace with your agent details -->
-                <span>Sarah Chen</span><br>
-                <span class="text-muted">Meridian Artists Agency</span><br>
-                <a href="mailto:sarah@meridianartists.com">sarah@meridianartists.com</a>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <i class="fas fa-clock"></i>
-              <div>
-                <span class="text-muted">I aim to respond within 48 hours.</span>
-              </div>
-            </div>
-
-            <div class="social-links" style="margin-top: var(--space-sm);">
-              <!-- TODO: Replace with your social media URLs -->
-              <a href="https://instagram.com/marcus.holloway.films" target="_blank" rel="noopener noreferrer"
-                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://vimeo.com/marcusholloway" target="_blank" rel="noopener noreferrer" aria-label="Vimeo"><i
-                  class="fab fa-vimeo-v"></i></a>
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i
-                  class="fab fa-x-twitter"></i></a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-                  class="fab fa-linkedin-in"></i></a>
-              <a href="https://imdb.com/" target="_blank" rel="noopener noreferrer" aria-label="IMDb"><i
-                  class="fab fa-imdb"></i></a>
-            </div>
-          </div>
-
-          <!-- Right Column: Contact Form -->
-          <div class="contact-form-wrapper">
-            <!-- TODO: Replace with your Formspree endpoint URL: action="https://formspree.io/f/YOUR_ID" method="POST" -->
-            <form id="contact-form" novalidate>
-
-              <div class="form-group">
-                <label for="name" class="sr-only">Your Name</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required
-                  aria-describedby="name-error">
-                <div class="form-error" id="name-error" role="alert"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="email" class="sr-only">Email Address</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="Email Address" required
-                  aria-describedby="email-error">
-                <div class="form-error" id="email-error" role="alert"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="inquiry-type" class="sr-only">Inquiry Type</label>
-                <select id="inquiry-type" name="inquiry-type" class="form-input form-select"
-                  aria-describedby="inquiry-error">
-                  <option value="">Select Inquiry Type</option>
-                  <option>Distribution Rights</option>
-                  <option>Press / Interview</option>
-                  <option>Festival Screening Request</option>
-                  <option>Commercial Collaboration</option>
-                  <option>Other</option>
-                </select>
-                <div class="form-error" id="inquiry-error" role="alert"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="organization" class="sr-only">Organization / Company</label>
-                <input type="text" id="organization" name="organization" class="form-input"
-                  placeholder="Organization / Company (optional)">
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="sr-only">Your Message</label>
-                <textarea id="message" name="message" class="form-input form-textarea" rows="6"
-                  placeholder="Your message..." required aria-describedby="message-error"></textarea>
-                <div class="form-error" id="message-error" role="alert"></div>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="film-strip"></div>
-
-    <!-- ===================================================
-         SECTION: PRESS KIT CTA
-         =================================================== -->
-    <section class="section cta-banner">
-      <div class="container">
-        <div class="cta-banner__content reveal">
-          <p class="section-label">For Press &amp; Distributors</p>
-          <h2>Press &amp; Distribution Inquiries</h2>
-          <p>Access filmmaker bio, high-resolution film stills, electronic press kit (EPK), and request screeners for
-            upcoming festivals.</p>
-          <div class="cta-banner__actions">
-            <!-- TODO: Add your press kit zip file to assets/files/ -->
-            <a href="../assets/files/press-kit.zip" class="btn btn-primary" download>
-              <i class="fas fa-download"></i> Download Press Kit
+    <!-- Navigation -->
+    <header class="glass-header dark sticky top-0" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="index.html" class="site-logo text-xl sm:text-2xl hover:text-gold text-white">
+                M/H <span class="site-logo__tagline hidden sm:inline">Filmmaking</span>
             </a>
-            <a href="#" class="btn btn-secondary"
-              onclick="document.getElementById('contact-form')?.scrollIntoView({behavior:'smooth'});return false;">Contact
-              for Screeners</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===================================================
-         SECTION: MAP
-         =================================================== -->
-    <section class="section">
-      <div class="container">
-        <div class="map-section reveal">
-          <!-- TODO: Replace src with your Google Maps embed URL -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1234567890"
-            loading="lazy" allowfullscreen title="Location map &mdash; New York, USA"></iframe>
-        </div>
-      </div>
-    </section>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-10">
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-2 text-white/80">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <div class="absolute top-full left-0 mt-4 w-48 bg-dark border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-2 shadow-2xl rounded-lg overflow-hidden">
+                        <a href="index.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/40 hover:text-gold hover:bg-white/5 transition-all">Cinematic Home</a>
+                        <a href="home-2.html" class="block px-4 py-2 text-xs uppercase tracking-widest text-white/40 hover:text-gold hover:bg-white/5 transition-all">Editorial Home</a>
+                    </div>
 
-  </main>
+                </div>
+                <a href="about.html" class="nav-link text-white/80">About</a>
+                <a href="portfolio.html" class="nav-link text-white/80">Portfolio</a>
+                <a href="gallery.html" class="nav-link text-white/80">Gallery</a>
+                <a href="tools.html" class="nav-link text-white/80">Tools</a>
+                <a href="services.html" class="nav-link text-white/80">Services</a>
+                <a href="blog.html" class="nav-link text-white/80">Blog</a>
+                <a href="contact.html" class="nav-link active text-white">Contact</a>
+            </nav>
 
-  <!-- ===================================================
-       SECTION: FOOTER
-       =================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Marcus Holloway</h4>
-          <p>Documentary filmmaker. Telling the stories the world hasn't heard yet.</p>
-          <div class="social-links">
-            <a href="https://instagram.com/marcus.holloway.films" target="_blank" rel="noopener noreferrer"
-              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://vimeo.com/marcusholloway" target="_blank" rel="noopener noreferrer" aria-label="Vimeo"><i
-                class="fab fa-vimeo-v"></i></a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i
-                class="fab fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a href="https://imdb.com/" target="_blank" rel="noopener noreferrer" aria-label="IMDb"><i
-                class="fab fa-imdb"></i></a>
-          </div>
+            <!-- Actions -->
+            <div class="flex items-center gap-2 sm:gap-4">
+                <!-- RTL Toggle -->
+                <button id="rtl-toggle" class="text-white/40 hover:text-gold transition-colors text-[10px] sm:text-sm font-mono" title="Toggle RTL">RTL</button>
+                <!-- Dark Mode -->
+                <button id="theme-toggle" class="text-white/40 hover:text-gold transition-colors w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-yellow-500/10">
+                    <i class="fas fa-moon text-xs sm:text-base"></i>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-toggle" class="lg:hidden text-white/80 hover:text-gold text-2xl">
+                    <i class="fas fa-bars-staggered"></i>
+                </button>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home-2.html">Home 2</a></li>
-            <li><a href="about.html">About</a></li>
-            
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0a0a0a] flex flex-col items-center justify-center translate-x-full transition-transform duration-700 ease-in-out">
+        <button id="mobile-close" class="absolute top-8 right-8 text-3xl text-white/60 hover:text-gold transition-colors">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col items-center space-y-8 text-center text-white/60">
+            <a href="index.html" class="site-logo text-2xl sm:text-3xl hover:text-gold text-white">
+                M/H <span class="site-logo__tagline hidden sm:inline">Filmmaking</span>
+            </a>
+            <!-- Home with Dropdown -->
+            <div class="mobile-nav-item flex flex-col items-center">
+                <button class="mobile-submenu-toggle text-4xl font-serif hover:text-gold flex items-center gap-4 transition-colors text-white/60">
+                    Home <i class="fas fa-chevron-down text-xl transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-submenu hidden flex-col items-center space-y-4 mt-6 overflow-hidden transition-all duration-300">
+                    <a href="index.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Cinematic Home</a>
+                    <a href="home-2.html" class="text-2xl font-serif text-white/60 hover:text-gold transition-colors">Editorial Home</a>
+                </div>
+            </div>
+            <a href="about.html" class="text-4xl font-serif hover:text-gold">About</a>
+            <a href="portfolio.html" class="text-4xl font-serif hover:text-gold">Portfolio</a>
+            <a href="gallery.html" class="text-4xl font-serif hover:text-gold">Gallery</a>
+            <a href="tools.html" class="text-4xl font-serif hover:text-gold">Tools</a>
+            <a href="services.html" class="text-4xl font-serif hover:text-gold">Services</a>
+            <a href="contact.html" class="text-4xl font-serif text-gold font-bold">Contact</a>
         </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><a href="mailto:contact@marcusholloway.com">contact@marcusholloway.com</a></p>
-          <p>New York, USA</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Marcus Holloway. All rights reserved.</span>
-        <span>Made with HTML, CSS &amp; JS &middot; <a href="https://validator.w3.org" target="_blank"
-            rel="noopener noreferrer">W3C Valid</a></span>
-      </div>
     </div>
-  </footer>
 
-  <script src="../assets/js/main.js"></script>
+    <main id="main-content" class="pt-24 sm:pt-36 pb-8 sm:pb-14">
+        <section class="min-h-[72vh] flex items-center mb-10 sm:mb-16 snap-start">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <!-- Left: Contact Info -->
+                    <div class="space-y-10 sm:space-y-16">
+                        <div class="reveal-up">
+                            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 sm:mb-8 leading-tight">Let's Talk.</h1>
+                            <p class="text-dark dark:text-bone/40 text-base sm:text-lg md:text-xl font-light max-w-lg">Available for selective projects world-wide. Whether it's a feature documentary or a creative collaboration, reach out.</p>
+                        </div>
+
+                        <div class="space-y-10 sm:space-y-12">
+                            <div class="group cursor-pointer reveal-up">
+                                <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-4">Email</p>
+                                <button class="text-[clamp(1.125rem,3.4vw,2.75rem)] font-black text-dark dark:text-bone group-hover:text-gold transition-colors whitespace-nowrap leading-[0.95] text-left copy-btn" data-email="hello@marcusholloway.com">
+                                    hello@marcusholloway.com
+                                </button>
+                                <span class="text-[9px] sm:text-[10px] text-dark dark:text-bone/20 font-mono mt-2 block opacity-0 group-hover:opacity-100 transition-opacity">Click to copy address</span>
+                            </div>
+
+                            <div class="reveal-up">
+                                <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-4">Social</p>
+                                <div class="flex gap-6 sm:gap-8 text-xl sm:text-2xl">
+                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors relative h-11 w-11 flex items-center justify-center border border-dark/5 rounded-full"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors relative h-11 w-11 flex items-center justify-center border border-dark/5 rounded-full"><i class="fab fa-vimeo-v"></i></a>
+                                    <a href="#" class="text-dark dark:text-bone/40 hover:text-gold transition-colors relative h-11 w-11 flex items-center justify-center border border-dark/5 rounded-full"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="bg-white dark:bg-surface p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden border border-dark/5 dark:border-white/5 reveal-up rounded-2xl">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl rounded-full"></div>
+                        <h3 class="text-3xl font-black mb-12">New Inquiry</h3>
+                        <!-- Formspree / Netlify Form Compatible -->
+                        <form class="space-y-10" id="contact-form" action="#" method="POST" data-netlify="true">
+                            <div class="relative group">
+                                <input type="text" name="name" placeholder="Your Name" class="form-input w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors placeholder:text-dark dark:text-bone dark:placeholder:text-bone/35" required>
+                                <span class="form-error text-[10px] text-red-500 font-mono absolute -bottom-5 left-0 opacity-0 transition-opacity">This field is required.</span>
+                            </div>
+                            <div class="relative group">
+                                <input type="email" name="email" placeholder="Email Address" class="form-input w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-all placeholder:text-dark dark:text-bone dark:placeholder:text-bone/35" required>
+                                <span class="form-error text-[10px] text-red-500 font-mono absolute -bottom-5 left-0 opacity-0 transition-opacity">Please enter a valid email.</span>
+                            </div>
+                            <div class="relative group">
+                                <select name="project-type" class="form-select w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors text-dark dark:text-bone bg-white dark:bg-surface">
+                                    <option value="">Select Project Type</option>
+                                    <option value="documentary">Documentary Feature</option>
+                                    <option value="short">Editorial / Short</option>
+                                    <option value="commercial">Commercial Production</option>
+                                </select>
+                            </div>
+                            <div class="relative group">
+                                <textarea name="message" rows="4" placeholder="How can we help?" class="form-textarea w-full bg-transparent border-b border-dark/10 dark:border-white/10 py-4 focus:outline-none focus:border-gold transition-colors placeholder:text-dark dark:text-bone dark:placeholder:text-bone/35 resize-none" required></textarea>
+                                <span class="form-error text-[10px] text-red-500 font-mono absolute -bottom-5 left-0 opacity-0 transition-opacity">Message cannot be empty.</span>
+                            </div>
+                            <button type="submit" class="w-full py-6 bg-gold text-dark focus:text-dark group-hover:text-dark font-black uppercase tracking-widest hover:bg-bone transition-all duration-500">
+                                Send Message
+                            </button>
+                        </form>
+
+
+                        <div id="form-success" class="hidden text-center py-20 space-y-6">
+                            <i class="fas fa-check-circle text-6xl text-gold"></i>
+                            <h3 class="text-3xl font-black">Message Received.</h3>
+                            <p class="text-dark dark:text-bone/60">I'll get back to you within 48 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Google Maps Placeholder -->
+        <section class="min-h-[45vh] flex flex-col snap-start pb-12 sm:pb-16">
+            <div class="container mx-auto px-6 h-full">
+                <div class="w-full h-[60vh] bg-dark/5 dark:bg-white/5 border border-dark/10 dark:border-white/10 relative group overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 rounded-2xl shadow-2xl">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2851929272805!2d-73.9934661!3d40.7139268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bb30508930b%3A0xe5a363a033da985c!2sCanal%20St%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1711200000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="absolute inset-0 pointer-events-none border border-dark/10 dark:border-white/10 rounded-2xl"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-bone dark:bg-dark/80 backdrop-blur-xl pt-16 pb-12 border-t border-dark/5 dark:border-white/5 reveal-up">
+        <div class="container mx-auto px-6">
+            <!-- Next Project CTA (Clean & Simple) -->
+            <div class="py-16 mb-16 border-y border-dark/5 dark:border-white/5 reveal-up">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12 group transition-all">
+                    <div class="max-w-xl text-center md:text-left">
+                        <span class="font-mono text-gold text-[10px] uppercase tracking-[0.6em] mb-4 block">Follow the Story</span>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-dark dark:text-bone tracking-tight leading-tight">
+                            Join the newsletter for <span class="italic text-gold/60 underline decoration-gold/20 underline-offset-8">exclusive updates.</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="flex flex-col items-center md:items-end gap-6 group">
+                        <p class="text-dark/40 dark:text-bone/40 text-xs font-mono uppercase tracking-[0.3em]">
+                            Stay Inspired
+                        </p>
+                        <div class="w-20 h-20 rounded-full border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark/20 dark:text-bone/20 shadow-lg">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24 pt-24 border-t border-dark/5 dark:border-white/5">
+                <div class="space-y-8">
+                    <a href="index.html" class="site-logo text-3xl text-dark dark:text-bone hover:text-gold">
+                        M/H <span class="site-logo__tagline hidden sm:inline">Filmmaking</span>
+                    </a>
+                    <p class="text-dark dark:text-bone/40 max-w-xs leading-relaxed font-light text-base italic">
+                        Capturing the raw essence of human stories across the globe.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/" target="_blank" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-instagram"></i></a>
+                        <a href="https://vimeo.com/" target="_blank" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="https://www.imdb.com/" target="_blank" class="w-10 h-10 border border-dark/10 dark:border-white/10 flex items-center justify-center text-dark dark:text-bone/40 hover:text-gold hover:border-gold/50 transition-all rounded-full"><i class="fab fa-imdb"></i></a>
+                    </div>
+                </div>
+
+                <!-- Exploration -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Exploration</h4>
+                    <ul class="space-y-4 text-sm font-mono text-dark dark:text-bone/40">
+                        <li><a href="index.html" class="hover:text-gold transition-colors block">Home Version 1</a></li>
+                        <li><a href="home-2.html" class="hover:text-gold transition-colors block">Home Version 2</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold transition-colors block">Portfolio Archive</a></li>
+                        <li><a href="gallery.html" class="hover:text-gold transition-colors block">Behind Scenes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Studio -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Studio</h4>
+                    <ul class="space-y-4 text-sm font-mono text-dark dark:text-bone/40">
+                        <li><a href="about.html" class="hover:text-gold transition-colors block">The Story</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors block">Services</a></li>
+                        <li><a href="tools.html" class="hover:text-gold transition-colors block">Equipment</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors block active font-bold text-gold">Get in Touch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] text-gold font-bold mb-10 font-mono">Connect</h4>
+                    <div class="space-y-6">
+                        <p class="text-sm font-mono text-dark dark:text-bone/40 leading-loose">
+                            Brooklyn, New York<br>
+                            contact@marcholloway.com
+                        </p>
+                        <form class="relative">
+                            <input type="email" placeholder="Newsletter" class="w-full bg-dark/5 dark:bg-white/5 border border-dark/10 dark:border-white/10 px-4 py-3 text-xs font-mono focus:outline-none focus:border-gold transition-all text-dark dark:text-bone" required>
+                            <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 text-gold hover:text-dark dark:text-bone transition-colors" aria-label="Subscribe Newsletter"><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-dark/5 dark:border-white/5 gap-12">
+                <div class="flex flex-wrap gap-12 justify-center md:justify-start">
+                    <p class="text-dark dark:text-bone/20 font-mono text-xs uppercase tracking-[0.3em]">&copy; 2026 Marcus Holloway. Crafted with precision.</p>
+                    <a href="#" class="text-dark dark:text-bone/20 hover:text-gold font-mono text-xs uppercase tracking-[0.3em] transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-dark dark:text-bone/20 hover:text-gold font-mono text-xs uppercase tracking-[0.3em] transition-colors">Terms of Vision</a>
+                </div>
+                <a href="#navbar" class="group flex items-center gap-4 text-dark dark:text-bone/20 hover:text-gold font-mono text-xs uppercase tracking-[0.3em] transition-all">
+                    <span>Back to Premiere</span>
+                    <div class="w-8 h-8 rounded-full border border-dark/5 dark:border-white/5 flex items-center justify-center group-hover:border-gold/50 transition-all text-dark dark:text-bone/20 group-hover:text-gold">
+                        <i class="fas fa-arrow-up text-[10px]"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
-
-
-

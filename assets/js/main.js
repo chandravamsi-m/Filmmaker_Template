@@ -12,19 +12,19 @@
  * Adds 'scrolled' class to navbar when page is scrolled past 50px.
  */
 function initNavbar() {
-  const navbar = document.querySelector('.navbar');
-  if (!navbar) return;
+    const nav = document.getElementById('navbar') || document.querySelector('.navbar');
+    if (!nav) return;
 
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  };
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    };
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 }
 
 /* ==============================================
@@ -36,79 +36,199 @@ function initNavbar() {
  * Toggles the mobile overlay menu and prevents body scroll when open.
  */
 function initMobileMenu() {
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  if (!hamburger || !mobileMenu) return;
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const close = document.getElementById('mobile-close');
+  
+  if (!toggle || !menu || !close) return;
 
-  const toggleMenu = () => {
-    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = isOpen ? '' : 'hidden';
+  const openMenu = () => {
+    const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    menu.classList.remove(isRTL ? '-translate-x-full' : 'translate-x-full');
+    menu.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden';
   };
 
-  hamburger.addEventListener('click', toggleMenu);
+  const closeMenu = () => {
+    const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    menu.classList.remove('translate-x-0');
+    menu.classList.add(isRTL ? '-translate-x-full' : 'translate-x-full');
+    document.body.style.overflow = '';
+    
+    // Reset any open submenus
+    document.querySelectorAll('.mobile-submenu').forEach(sub => {
+      sub.classList.add('hidden');
+      sub.classList.remove('flex');
+    });
+    document.querySelectorAll('.mobile-submenu-toggle i').forEach(icon => {
+      gsap.to(icon, { rotation: 0, duration: 0.1 });
+    });
+  };
 
-  // Close menu when clicking a link
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.setAttribute('aria-expanded', 'false');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
+  toggle.addEventListener('click', openMenu);
+  close.addEventListener('click', closeMenu);
+
+  // Close menu when clicking a link (but not if it's a submenu toggle)
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (!link.classList.contains('mobile-submenu-toggle')) {
+         closeMenu();
+      }
+    });
+  });
+
+  // Handle Submenus
+  const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
+  submenuToggles.forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', () => {
+      const submenu = toggleBtn.nextElementSibling;
+      const icon = toggleBtn.querySelector('i');
+      const isOpen = !submenu.classList.contains('hidden');
+
+      if (!isOpen) {
+        submenu.classList.remove('hidden');
+        submenu.classList.add('flex');
+        gsap.fromTo(submenu, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.out' });
+        gsap.to(icon, { rotation: 180, duration: 0.3 });
+      } else {
+        gsap.to(submenu, { height: 0, opacity: 0, duration: 0.3, ease: 'power2.in', onComplete: () => {
+          submenu.classList.add('hidden');
+          submenu.classList.remove('flex');
+        }});
+        gsap.to(icon, { rotation: 0, duration: 0.3 });
+      }
     });
   });
 
   // Close on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      hamburger.setAttribute('aria-expanded', 'false');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
+    if (e.key === 'Escape' && !menu.classList.contains('translate-x-full')) {
+      closeMenu();
     }
   });
 }
 
-/* ==============================================
-   MODULE: Theme Toggle (Dark/Light Mode)
-   ============================================== */
-
 /**
  * Toggles dark/light mode and persists preference in localStorage.
- * Auto-detects OS theme preference on first visit.
+ * Integrates with Tailwind's 'dark' class strategy.
  */
 function initThemeToggle() {
-  const toggle = document.querySelector('.theme-toggle');
-  if (!toggle) return;
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
 
-  // Check for saved preference or OS preference
-  const savedTheme = localStorage.getItem('theme-preference');
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-  } else if (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    document.body.classList.add('light-mode');
-  }
+    // Apply theme from localStorage OR document class
+    const isLight = localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !document.documentElement.classList.contains('dark'));
+    
+    const applyTheme = (toLight) => {
+        if (toLight) {
+            document.documentElement.classList.remove('dark');
+            document.body.classList.add('light-mode');
+            toggle.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            document.body.classList.remove('light-mode');
+            toggle.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', 'dark');
+        }
+    };
 
-  updateToggleIcon(toggle);
-
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    localStorage.setItem('theme-preference', isLight ? 'light' : 'dark');
-    updateToggleIcon(toggle);
-  });
+    // Initialize
+    applyTheme(isLight);
+    
+    toggle.addEventListener('click', () => {
+        const currentlyLight = document.body.classList.contains('light-mode');
+        applyTheme(!currentlyLight);
+        // Trigger scroll update for navbar theme
+        window.dispatchEvent(new Event('scroll'));
+    });
 }
 
 /**
- * Updates the theme toggle button icon based on current mode.
- * @param {HTMLElement} toggle - The toggle button element
+ * Toggles Right-to-Left (RTL) mode and persists preference.
+ * Updates the 'dir' attribute on <html> and adds/removes 'rtl' class on body.
  */
-function updateToggleIcon(toggle) {
-  const isLight = document.body.classList.contains('light-mode');
-  const icon = toggle.querySelector('i');
-  if (icon) {
-    icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
-  }
-  toggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+function initRTL() {
+    const toggle = document.getElementById('rtl-toggle');
+    if (!toggle) return;
+
+    const applyRTL = (isRTL) => {
+        if (isRTL) {
+            document.documentElement.setAttribute('dir', 'rtl');
+            document.body.classList.add('rtl');
+            localStorage.setItem('rtl', 'true');
+            // Update mobile menu default state if it exists
+            const menu = document.getElementById('mobile-menu');
+            if (menu && menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+                menu.classList.add('-translate-x-full');
+            }
+        } else {
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.body.classList.remove('rtl');
+            localStorage.setItem('rtl', 'false');
+            // Update mobile menu default state if it exists
+            const menu = document.getElementById('mobile-menu');
+            if (menu && menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+                menu.classList.add('translate-x-full');
+            }
+        }
+    };
+
+    // Initialize from storage or default to LTR
+    const savedRTL = localStorage.getItem('rtl') === 'true';
+    applyRTL(savedRTL);
+
+    toggle.addEventListener('click', () => {
+        const currentRTL = document.documentElement.getAttribute('dir') === 'rtl';
+        applyRTL(!currentRTL);
+    });
+}
+
+/**
+ * Initializes GSAP animations and ScrollTrigger.
+ */
+function initGSAP() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Common Animations
+    gsap.utils.toArray('.reveal-up').forEach(item => {
+        gsap.to(item, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 90%'
+            }
+        });
+    });
+
+    // Page Specific: Home Hero
+    if (document.getElementById('hero-img')) {
+        const heroTimeline = gsap.timeline();
+        heroTimeline.to('#hero-img', { scale: 1, duration: 2, ease: 'power2.out' })
+                    .to('.reveal-up', { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power3.out' }, '-=1.5');
+    }
+
+    // Page Specific: Portfolio Grid
+    if (document.getElementById('portfolio-grid')) {
+        gsap.from('.portfolio-card', {
+            scrollTrigger: {
+                trigger: '#portfolio-grid',
+                start: 'top 80%',
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            duration: 1,
+            ease: 'power3.out'
+        });
+    }
 }
 
 /* ==============================================
@@ -424,7 +544,7 @@ function initScrollReveal() {
  */
 function initActiveNav() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+  const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a');
   const isHomeVariant = currentPage === 'index.html' || currentPage === 'home-2.html';
 
   navLinks.forEach(link => {
@@ -432,12 +552,10 @@ function initActiveNav() {
     const [rawPage] = href.split('#');
     const linkPage = rawPage || 'index.html';
 
-    if (linkPage === currentPage) {
+    if (linkPage === currentPage || (isHomeVariant && linkPage === 'index.html')) {
       link.classList.add('active');
-    }
-
-    if (isHomeVariant && href === 'index.html' && link.textContent.trim() === 'Home') {
-      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
   });
 }
@@ -498,14 +616,16 @@ function initCounters() {
    ============================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initMobileMenu();
-  initThemeToggle();
-  initLightbox();
-  initScrollReveal();
-  initActiveNav();
-  initCopyEmail();
-  initCounters();
+    initNavbar();
+    initMobileMenu();
+    initThemeToggle();
+    initRTL();
+    initGSAP();
+    initLightbox();
+    initScrollReveal();
+    initActiveNav();
+    initCopyEmail();
+    initCounters();
 
   if (document.getElementById('contact-form')) {
     initContactForm();

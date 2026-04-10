@@ -1,127 +1,45 @@
-﻿/* ==============================================
-   DARK MODE / LIGHT MODE OVERRIDES
-   Dark mode is the DEFAULT (variables in style.css).
-   This file defines the LIGHT MODE overrides.
+/* ==============================================
+   FILMMAKER TEMPLATE — DARK MODE VARIABLES
    ============================================== */
 
-body.light-mode {
-  --color-bg: #eef7f5;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f4fbf9;
-  --color-primary: #0d7a70;
-  --color-primary-dark: #095d56;
-  --color-accent-rgb: 13, 122, 112;
-  --color-text: #142423;
-  --color-text-muted: #5e7673;
-  --color-border: #cfe0dc;
-  --color-overlay: rgba(0,0,0,0.5);
-  --color-overlay-soft: rgba(255,255,255,0.35);
-  --color-overlay-strong: rgba(238,247,245,0.8);
-  --color-overlay-edge: rgba(238,247,245,0.56);
-  --color-bg-gradient-start: #eff8f6;
-  --color-bg-gradient-end: #e8f3f0;
-  --color-nav-scrolled-bg: rgba(238, 247, 245, 0.94);
-  --color-dropdown-bg: rgba(255, 255, 255, 0.96);
-  --color-proof-border: rgba(26,24,20,0.14);
-  --color-proof-bg: rgba(255,255,255,0.62);
-  --color-skeleton-1: #f2ece5;
-  --color-skeleton-2: #e4ddd5;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 24px rgba(0,0,0,0.12);
-  --shadow-lg: 0 8px 48px rgba(0,0,0,0.16);
+:root {
+  /* Colors - Dark Theme (Default) */
+  --color-bg: #050505;
+  --color-surface: #0d0d0d;
+  --color-surface-alt: #121212;
+  --color-gold: #E8C547;
+  --color-gold-light: #f1d683;
+  --color-gold-dark: #c4a230;
+  --color-bone: #F0EDE8;
+  --color-text: #F0EDE8;
+  --color-text-muted: rgba(240, 237, 232, 0.6);
+  --color-border: rgba(240, 237, 232, 0.1);
+  --color-overlay: rgba(0,0,0,0.75);
+  --color-primary: var(--color-gold);
+  --color-primary-dark: var(--color-gold-dark);
+  
+  /* Additional RGB values for opacity-based gradients */
+  --color-accent-rgb: 232, 197, 71;
+  --color-bg-gradient-start: #050505;
+  --color-bg-gradient-end: #0a0a0a;
+  
+  /* UI Elements */
+  --color-nav-scrolled-bg: rgba(10, 10, 10, 0.98);
+  --color-dropdown-bg: rgba(20, 20, 20, 0.98);
+  --color-proof-border: rgba(240, 237, 232, 0.05);
+  --color-proof-bg: rgba(255, 255, 255, 0.03);
+  
+  /* Skeletons */
+  --color-skeleton-1: #1a1a1a;
+  --color-skeleton-2: #252525;
 }
 
-/* Light mode specific adjustments */
-body.light-mode .hero-grain {
-  opacity: 0.04;
+/* Dark mode specific refinements */
+.grain-overlay {
+  opacity: 0.08;
 }
 
-body.light-mode .navbar.scrolled {
-  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+.glass-header.scrolled {
+  background: var(--color-nav-scrolled-bg) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-
-body.light-mode .press-logo {
-  border-color: var(--color-border);
-}
-
-body.light-mode .map-section iframe {
-  filter: grayscale(0.3) contrast(1.05);
-}
-
-body.light-mode .screening-row:nth-child(even) {
-  background: rgba(0,0,0,0.02);
-}
-
-body.light-mode .screening-row:hover {
-  background: rgba(0,0,0,0.04);
-}
-
-/* Light mode overrides for new components */
-body.light-mode .navbar.scrolled {
-  background-color: var(--color-nav-scrolled-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
-}
-
-body.light-mode .nav-dropdown a:hover,
-body.light-mode .nav-dropdown a.active {
-  background: rgba(var(--color-accent-rgb), 0.1);
-}
-
-body.light-mode .hero-proof span {
-  color: var(--color-text);
-}
-
-body.light-mode .section--surface,
-body.light-mode .section--alt {
-  border-color: rgba(var(--color-accent-rgb), 0.06);
-}
-
-body.light-mode .btn-primary:hover {
-  box-shadow: 0 0 20px rgba(var(--color-accent-rgb), 0.25), 0 4px 24px rgba(0,0,0,0.1);
-}
-
-body.light-mode .btn-secondary:hover {
-  box-shadow: 0 0 20px rgba(var(--color-accent-rgb), 0.2), 0 4px 24px rgba(0,0,0,0.1);
-}
-
-body.light-mode .film-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 30px rgba(var(--color-accent-rgb), 0.06);
-  border-color: rgba(var(--color-accent-rgb), 0.2);
-}
-
-body.light-mode .stat-box:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 0 20px rgba(var(--color-accent-rgb), 0.06);
-  border-color: rgba(var(--color-accent-rgb), 0.3);
-}
-
-body.light-mode .feature-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 0 24px rgba(var(--color-accent-rgb), 0.06);
-  border-color: rgba(var(--color-accent-rgb), 0.25);
-}
-
-body.light-mode .feature-card__icon {
-  background: rgba(var(--color-accent-rgb), 0.08);
-}
-
-body.light-mode .feature-card:hover .feature-card__icon {
-  background: rgba(var(--color-accent-rgb), 0.12);
-  box-shadow: 0 0 24px rgba(var(--color-accent-rgb), 0.1);
-}
-
-body.light-mode .testimonial:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-}
-
-body.light-mode .press-logo:hover {
-  border-color: rgba(var(--color-accent-rgb), 0.3);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-
-body.light-mode .cta-banner {
-  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(var(--color-accent-rgb), 0.04) 50%, var(--color-surface) 100%);
-  border-top: 1px solid rgba(var(--color-accent-rgb), 0.1);
-  border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
-}
-

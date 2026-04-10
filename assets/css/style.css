@@ -1,4 +1,4 @@
-﻿/* ==============================================
+/* ==============================================
    FILMMAKER TEMPLATE â€” MAIN STYLESHEET
    Independent Documentary Filmmaker Portfolio
    ============================================== */
@@ -7,60 +7,45 @@
    CSS CUSTOM PROPERTIES
    ============================================== */
 :root {
-  /* Colors */
-  --color-bg: #071419;
-  --color-surface: #0d1d24;
-  --color-surface-alt: #11252d;
-  --color-primary: #63cbbf;
-  --color-primary-dark: #46a399;
-  --color-accent-rgb: 99, 203, 191;
-  --color-text: #e5f2f0;
-  --color-text-muted: #90a9a6;
-  --color-border: #1f3940;
-  --color-overlay: rgba(0,0,0,0.75);
-  --color-overlay-soft: rgba(0,0,0,0.45);
-  --color-overlay-strong: rgba(0,0,0,0.84);
-  --color-overlay-edge: rgba(0,0,0,0.7);
-  --color-bg-gradient-start: #071419;
-  --color-bg-gradient-end: #08171d;
-  --color-nav-scrolled-bg: rgba(7, 20, 25, 0.88);
-  --color-dropdown-bg: rgba(10, 28, 35, 0.96);
-  --color-proof-border: rgba(255,255,255,0.2);
-  --color-proof-bg: rgba(18, 18, 18, 0.5);
-  --color-skeleton-1: #1a1a1a;
-  --color-skeleton-2: #232323;
-  --color-error: #E05252;
-  --color-success: #52C07A;
+  /* ==============================================
+     LAYOUT & TYPOGRAPHY VARIABLES
+     (Color variables are defined in theme files)
+     ============================================== */
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Inter', system-ui, sans-serif;
 
   /* Spacing (8px base grid) */
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 48px;
-  --space-xl: 80px;
-  --space-xxl: 120px;
+  --space-xs: clamp(4px, 1vw, 8px);
+  --space-sm: clamp(8px, 2vw, 16px);
+  --space-md: clamp(16px, 3vw, 24px);
+  --space-lg: clamp(24px, 5vw, 48px);
+  --space-xl: clamp(40px, 8vw, 80px);
+  --space-xxl: clamp(60px, 12vw, 120px);
 
   /* Layout */
   --container-max: 1320px;
-  --container-padding: clamp(18px, 4vw, 28px);
+  --container-padding: clamp(12px, 5vw, 28px);
   --border-radius: 4px;
   --border-radius-lg: 8px;
 
   /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 300ms ease;
-  --transition-slow: 600ms ease;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Shadows */
+  /* Shadows (Standardised) */
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
   --shadow-md: 0 4px 24px rgba(0,0,0,0.6);
   --shadow-lg: 0 8px 48px rgba(0,0,0,0.8);
+
+  /* Brand Colors (Dark Mode Defaults) - Brightened up to punchy gold */
+  --color-gold: #FFC107;
+  --color-gold-rgb: 255 193 7;
 }
+
 
 /* ==============================================
    RESET & BASE STYLES
@@ -97,10 +82,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 3rem); }
-h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
-h4 { font-size: clamp(1.1rem, 1.5vw, 1.35rem); }
+h1 { font-size: clamp(2rem, 8vw, 4.5rem); }
+h2 { font-size: clamp(1.5rem, 5vw, 3rem); }
+h3 { font-size: clamp(1.1rem, 3vw, 1.75rem); }
+h4 { font-size: clamp(1rem, 2vw, 1.35rem); }
 
 p {
   margin: 0 0 var(--space-sm);
@@ -170,9 +155,269 @@ ul, ol {
 .text-muted { color: var(--color-text-muted); }
 .font-mono { font-family: var(--font-mono); }
 
+.site-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  transition: color var(--transition-base);
+}
+
+.site-logo__tagline {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.site-logo__tagline.hidden {
+  display: inline !important;
+}
+
+@media (max-width: 640px) {
+  .glass-header .site-logo {
+    gap: 0.32rem;
+  }
+
+  .glass-header .site-logo__tagline {
+    font-size: 0.46rem;
+    letter-spacing: 0.16em;
+    opacity: 0.72;
+  }
+}
+
 /* Keep anchor targets visible below fixed navbar */
 #tools {
   scroll-margin-top: 110px;
+}
+
+/* ==============================================
+   COMPONENT: Navbar Redesign
+   ============================================== */
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: clamp(10px, 2vw, 18px) 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(10, 10, 10, 0.98) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(240, 237, 232, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile actions gap fix */
+.glass-header .flex.items-center.gap-6 {
+    gap: clamp(1rem, 4vw, 1.5rem);
+}
+
+/* Navbar element colors — bright white for maximum readability */
+.glass-header .nav-link,
+.glass-header .nav-logo,
+.glass-header .text-2xl,
+.glass-header #theme-toggle,
+.glass-header #rtl-toggle,
+.glass-header #mobile-toggle,
+.glass-header #mobile-close,
+.glass-header a,
+.glass-header button,
+.glass-header span {
+    color: #f5f5f5 !important;
+    transition: color 0.3s ease;
+}
+
+/* Hover & Active States */
+.glass-header .nav-link:hover,
+.glass-header .nav-link.active {
+    color: var(--color-primary) !important;
+}
+
+#theme-toggle:hover,
+#rtl-toggle:hover,
+#mobile-toggle:hover {
+    color: var(--color-primary) !important;
+}
+
+/* Scrolled State */
+.glass-header.scrolled {
+  padding: 12px 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Dropdown Menus (always dark bg for consistency) */
+.glass-header .group-hover\:visible,
+.glass-header .group > div[class*="absolute"] {
+    background: rgba(20, 20, 20, 0.98) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px);
+}
+
+.glass-header .group-hover\:visible a,
+.glass-header .group > div[class*="absolute"] a {
+    color: rgba(245, 245, 245, 0.7) !important;
+}
+
+.glass-header .group-hover\:visible a:hover,
+.glass-header .group > div[class*="absolute"] a:hover {
+    color: var(--color-gold) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Underline animation */
+.glass-header .nav-link {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-header .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.glass-header .nav-link:hover::after,
+.glass-header .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.glass-header .nav-link:hover {
+  background: rgba(var(--color-accent-rgb), 0.08);
+}
+
+.glass-header .nav-link.active {
+  background: transparent;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+/* Keep desktop nav ordering independent from page text direction */
+.glass-header nav.hidden.lg\:flex {
+  direction: ltr;
+  flex-direction: row;
+}
+
+/* ==============================================
+   MODULE: Mobile Menu (Always Dark)
+   ============================================== */
+#mobile-menu {
+    background: #0a0a0a !important;
+}
+
+#mobile-menu a {
+    color: #f5f5f5 !important;
+    transition: color 0.3s ease;
+}
+
+#mobile-menu a:hover,
+#mobile-menu a.text-gold {
+    color: var(--color-gold) !important;
+}
+
+#mobile-close {
+    color: rgba(245, 245, 245, 0.6) !important;
+    transition: color 0.3s ease;
+}
+
+#mobile-close:hover {
+    color: var(--color-gold) !important;
+}
+
+/* ==============================================
+   MODULE: RTL Overrides
+   ============================================== */
+[dir="rtl"] {
+    text-align: right;
+}
+
+/* Mirror icons that are directional */
+[dir="rtl"] i.fas.fa-arrow-right,
+[dir="rtl"] i.fas.fa-arrow-left,
+[dir="rtl"] i.fas.fa-chevron-right,
+[dir="rtl"] i.fas.fa-chevron-left,
+[dir="rtl"] i.fas.fa-play,
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-long-arrow-alt-right {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+/* Standardize punctuation for English text in RTL */
+[dir="rtl"] body {
+    unicode-bidi: plaintext;
+    text-align: right;
+}
+
+/* Flip mobile menu close button */
+[dir="rtl"] #mobile-close {
+    right: auto !important;
+    left: 2rem !important;
+}
+
+/* Flip absolute positioned elements (badges, labels) */
+[dir="rtl"] .absolute.left-4 {
+    left: auto !important;
+    right: 1rem !important;
+}
+
+[dir="rtl"] .absolute.right-4 {
+    right: auto !important;
+    left: 1rem !important;
+}
+
+/* Ensure navbar transitions properly */
+.glass-header .nav-logo {
+    transition: transform 0.3s ease;
+}
+
+[dir="rtl"] .glass-header .nav-logo {
+    text-align: right;
+}
+
+[dir="rtl"] .glass-header .flex.items-center.gap-6 {
+    flex-direction: row-reverse;
+}
+
+/* Keep desktop navbar spacing stable in RTL */
+[dir="rtl"] .glass-header nav.hidden.lg\:flex {
+    flex-direction: row-reverse;
+    column-gap: 2.5rem;
+}
+
+[dir="rtl"] .glass-header nav.hidden.lg\:flex > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Keep the Home dropdown trigger laid out as "Home chevron" in RTL */
+[dir="rtl"] .glass-header nav.hidden.lg\:flex .group > button {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* Anchor dropdowns to the right side in RTL */
+[dir="rtl"] .glass-header nav.hidden.lg\:flex .group > div[class*="absolute"] {
+    left: auto;
+    right: 0;
 }
 
 /* ==============================================
@@ -242,7 +487,9 @@ ul, ol {
 /* ==============================================
    COMPONENT: Buttons
    ============================================== */
-.btn {
+.btn,
+.btn-primary,
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -288,6 +535,70 @@ ul, ol {
   box-shadow: 0 0 20px rgba(var(--color-accent-rgb), 0.3), 0 4px 24px rgba(0,0,0,0.4);
 }
 
+.service-checklist {
+  display: grid;
+  gap: 0.9rem;
+  color: rgba(240, 237, 232, 0.72);
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1vw + 0.82rem, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.service-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  line-height: 1.55;
+}
+
+.service-checklist li i {
+  flex-shrink: 0;
+  margin-top: 0.28rem;
+}
+
+.service-cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.service-cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 999px;
+  background: rgba(var(--color-accent-rgb), 0.08);
+}
+
+.service-cta-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.service-cta-copy p {
+  max-width: 22rem;
+}
+
+.service-cta-button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.service-cta-button i {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
 .btn-sm {
   padding: 8px 20px;
   font-size: 0.85rem;
@@ -322,83 +633,7 @@ ul, ol {
 /* ==============================================
    COMPONENT: Navigation
    ============================================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: var(--space-sm) 0;
-  transition: background-color var(--transition-base), padding var(--transition-base), box-shadow var(--transition-base), backdrop-filter var(--transition-base);
-}
-
-.navbar.scrolled {
-  background-color: var(--color-nav-scrolled-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(var(--color-accent-rgb), 0.1);
-  padding: var(--space-xs) 0;
-}
-
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-text);
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-.nav-logo:hover {
-  color: var(--color-primary);
-}
-
-.nav-links {
-  display: none;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-links a {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-decoration: none;
-  transition: color var(--transition-base);
-  position: relative;
-  padding: 4px 0;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width var(--transition-base);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--color-text);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
+/* Redundant .navbar block removed - consolidated into .glass-header */
 
 .nav-dropdown {
   position: absolute;
@@ -587,6 +822,10 @@ ul, ol {
     linear-gradient(85deg, var(--color-overlay-strong) 0%, var(--color-overlay-soft) 58%, var(--color-overlay-edge) 100%),
     var(--color-overlay);
   z-index: 1;
+}
+
+body.light-mode .hero-overlay {
+  background: rgba(252, 250, 247, 0.4); /* Subtle light wash over hero */
 }
 
 .hero-grain {

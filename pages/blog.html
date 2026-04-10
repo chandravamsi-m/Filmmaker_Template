@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Films | Marcus Holloway</title>
+    <title>Blog | Marcus Holloway - Insights on Documentary Filmmaking</title>
+    <meta name="description" content="Read insights, behind-the-scenes stories, and technical reflections on documentary filmmaking by Marcus Holloway. Stay updated with the latest in cinematic storytelling.">
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     
     <!-- Fonts -->
@@ -20,10 +22,27 @@
     <!-- External Styles -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/theme-light.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Marcus Holloway Blog",
+      "description": "Insights into the world of documentary filmmaking.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Marcus Holloway"
+      }
+    }
+    </script>
 </head>
 <body class="bg-bone text-dark dark:bg-dark dark:text-bone font-sans antialiased selection:bg-gold selection:text-dark overflow-x-hidden">
     <div class="grain-overlay"></div>
@@ -52,6 +71,7 @@
                 <a href="gallery.html" class="nav-link text-white/80">Gallery</a>
                 <a href="tools.html" class="nav-link text-white/80">Tools</a>
                 <a href="services.html" class="nav-link text-white/80">Services</a>
+                <a href="blog.html" class="nav-link active text-white">Blog</a>
                 <a href="contact.html" class="nav-link text-white/80">Contact</a>
             </nav>
 
@@ -95,74 +115,82 @@
             <a href="gallery.html" class="text-4xl font-serif hover:text-gold">Gallery</a>
             <a href="tools.html" class="text-4xl font-serif hover:text-gold">Tools</a>
             <a href="services.html" class="text-4xl font-serif hover:text-gold">Services</a>
+            <a href="blog.html" class="text-4xl font-serif text-gold font-bold">Blog</a>
             <a href="contact.html" class="text-4xl font-serif hover:text-gold">Contact</a>
         </div>
     </div>
 
-    <main id="main-content" class="pt-24 sm:pt-36 pb-8 sm:pb-14">
-        <!-- Page Header -->
-        <div class="container mx-auto px-4 sm:px-6 mb-10 sm:mb-16 min-h-[32vh] sm:min-h-[46vh] flex flex-col justify-center snap-start">
-            <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-widest mb-4 sm:mb-8 reveal-up text-center lg:text-left">Archive</p>
-            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 sm:mb-8 reveal-up text-center lg:text-left">Films.</h1>
-            <p class="max-w-2xl text-dark dark:text-bone/40 text-base sm:text-lg md:text-xl font-light reveal-up text-center lg:text-left mx-auto lg:mx-0">
-                A curated body of work spanning feature-length documentaries, short films, and episodic series—each exploring the human condition through uncompromising storytelling.
-            </p>
-        </div>
-
-        <!-- Filter Bar -->
-        <div class="container mx-auto px-4 sm:px-6 mb-12 sm:mb-16 flex flex-wrap gap-2 sm:gap-4 snap-start reveal-up">
-             <button class="filter-btn active px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="all">All</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="feature">Feature</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="short">Short</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="series">Series</button>
-             <button class="filter-btn px-4 sm:px-6 py-3 border border-dark/10 dark:border-white/10 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all hover:border-gold min-h-[44px]" data-filter="commercial">Commercial</button>
-        </div>
-
-        <!-- Film Grid -->
-        <div class="container mx-auto px-6 mb-16 sm:mb-20">
-            <div class="grid grid-cols-1 gap-16 sm:gap-20" id="film-grid">
-                <!-- Film 1 -->
-                <div class="film-card group reveal-up" data-category="feature">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="lg:col-span-7 aspect-video bg-white dark:bg-surface overflow-hidden relative shadow-2xl">
-                             <img src="../assets/images/ocean-aerial.webp" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
-                             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                 <button class="w-24 h-24 rounded-full bg-gold text-dark flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform">
-                                     <i class="fas fa-play text-2xl"></i>
-                                 </button>
-                             </div>
-                        </div>
-                        <div class="lg:col-span-5 space-y-8">
-                            <span class="font-mono text-[10px] text-gold uppercase tracking-[0.3em] block">Feature Length / 2024</span>
-                            <h2 class="text-4xl md:text-6xl font-black group-hover:text-gold transition-colors">The Forgotten Shore</h2>
-                            <p class="text-dark dark:text-bone/40 text-lg font-light leading-relaxed">A coastal community fights to preserve their way of life against rising seas. Shot over eighteen months, following three families navigatig the impossible choice between ancestry and an uncertain future.</p>
-                            <div class="flex flex-wrap gap-4">
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono"><i class="fas fa-award mr-2 text-gold"></i> Sundance</span>
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono"><i class="fas fa-award mr-2 text-gold"></i> IDFA Winner</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Film 2 -->
-                <div class="film-card group reveal-up" data-category="short">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="lg:col-span-7 lg:order-2 aspect-video bg-white dark:bg-surface overflow-hidden relative shadow-2xl">
-                             <img src="../assets/images/concert-crowd.webp" alt="Work" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 scale-100 group-hover:scale-110">
-                        </div>
-                        <div class="lg:col-span-5 lg:order-1 space-y-8 lg:text-right">
-                            <span class="font-mono text-[10px] text-gold uppercase tracking-[0.3em] block">Short Film / 2023</span>
-                            <h2 class="text-4xl md:text-6xl font-black group-hover:text-gold transition-colors">Voices in the Dark</h2>
-                            <p class="text-dark dark:text-bone/40 text-lg font-light leading-relaxed">Inside a blind choir in rural Appalachia. An intimate portrait of community, faith, and the transformative power of music when sight is absent.</p>
-                            <div class="flex flex-wrap gap-4 lg:justify-end">
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono">Tribeca</span>
-                                <span class="px-4 py-2 border border-dark/10 dark:border-white/10 rounded-full text-[10px] uppercase font-mono">SXSW</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <main id="main-content" class="pt-24 sm:pt-32">
+        <!-- Blog Hero -->
+        <section class="relative h-[36vh] sm:h-[48vh] flex items-center justify-center overflow-hidden mb-8 sm:mb-14">
+            <img src="../assets/images/blog-hero.webp" class="absolute inset-0 w-full h-full object-cover grayscale brightness-50" alt="Cinematic film editing workspace">
+            <div class="relative z-10 text-center container mx-auto px-4 sm:px-6">
+                <p class="font-mono text-gold text-[10px] sm:text-xs uppercase tracking-[0.5em] mb-4 sm:mb-6 reveal-up">Journal</p>
+                <h1 class="text-4xl sm:text-6xl md:text-8xl font-black text-bone reveal-up">THE CUTTING ROOM.</h1>
             </div>
-        </div>
+        </section>
+
+        <!-- Blog Feed -->
+        <section class="container mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+                <!-- Blog Post 1 -->
+                <article class="group reveal-up">
+                    <div class="aspect-video overflow-hidden mb-6 relative bg-surface">
+                        <img src="../assets/images/camera-documentary.webp" alt="Post Image" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 font-mono text-[10px] text-gold uppercase tracking-widest">
+                            <span>March 12, 2026</span>
+                            <span class="w-1 h-1 bg-gold/30 rounded-full"></span>
+                            <span>Cinematography</span>
+                        </div>
+                        <h3 class="text-2xl font-serif group-hover:text-gold transition-colors leading-tight">Finding the Light in the Dark: Shooting "Shadows"</h3>
+                        <p class="text-dark dark:text-bone/60 line-clamp-3 font-light">
+                            Developing a visual language for a story that takes place almost entirely at night presented unique challenges and unexpected opportunities...
+                        </p>
+                        <a href="#" class="inline-block text-[10px] font-mono uppercase tracking-widest text-gold border-b border-gold/30 hover:border-gold pb-1 transition-all">Read Journal &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="group reveal-up" style="transition-delay: 200ms;">
+                    <div class="aspect-video overflow-hidden mb-6 relative bg-surface">
+                        <img src="../assets/images/film-production.webp" alt="Post Image" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 font-mono text-[10px] text-gold uppercase tracking-widest">
+                            <span>February 28, 2026</span>
+                            <span class="w-1 h-1 bg-gold/30 rounded-full"></span>
+                            <span>Directing</span>
+                        </div>
+                        <h3 class="text-2xl font-serif group-hover:text-gold transition-colors leading-tight">The Ethics of Documentary: A New Perspective</h3>
+                        <p class="text-dark dark:text-bone/60 line-clamp-3 font-light">
+                            How do we balance the need for a compelling narrative with our responsibility to the subjects who trust us with their lives?
+                        </p>
+                        <a href="#" class="inline-block text-[10px] font-mono uppercase tracking-widest text-gold border-b border-gold/30 hover:border-gold pb-1 transition-all">Read Journal &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="group reveal-up" style="transition-delay: 400ms;">
+                    <div class="aspect-video overflow-hidden mb-6 relative bg-surface">
+                        <img src="../assets/images/film-reel.webp" alt="Post Image" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 font-mono text-[10px] text-gold uppercase tracking-widest">
+                            <span>January 15, 2026</span>
+                            <span class="w-1 h-1 bg-gold/30 rounded-full"></span>
+                            <span>Gear</span>
+                        </div>
+                        <h3 class="text-2xl font-serif group-hover:text-gold transition-colors leading-tight">Why I'm Still Shooting on 16mm in 2026</h3>
+                        <p class="text-dark dark:text-bone/60 line-clamp-3 font-light">
+                            There's a texture to celluloid that pixels haven't quite mastered yet. In this post, I break down my current workflow and why the grain matters.
+                        </p>
+                        <a href="#" class="inline-block text-[10px] font-mono uppercase tracking-widest text-gold border-b border-gold/30 hover:border-gold pb-1 transition-all">Read Journal &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -223,7 +251,7 @@
                     <ul class="space-y-4 text-sm font-mono text-dark dark:text-bone/40">
                         <li><a href="about.html" class="hover:text-gold transition-colors block">The Story</a></li>
                         <li><a href="services.html" class="hover:text-gold transition-colors block">Services</a></li>
-                        <li><a href="tools.html" class="hover:text-gold transition-colors block">Equipment</a></li>
+                        <li><a href="blog.html" class="hover:text-gold transition-colors block active font-bold text-gold">Blog</a></li>
                         <li><a href="contact.html" class="hover:text-gold transition-colors block">Get in Touch</a></li>
                     </ul>
                 </div>
