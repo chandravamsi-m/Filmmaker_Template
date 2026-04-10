@@ -543,16 +543,32 @@ function initScrollReveal() {
  * Highlights the active navigation link based on the current page URL.
  */
 function initActiveNav() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a');
+  const path = window.location.pathname;
+  const currentPage = path.split('/').pop() || 'index.html';
+  
+  // Select all possible navigation links (Desktop, Dropdowns, and Mobile)
+  const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a, .glass-header .absolute a');
+  
   const isHomeVariant = currentPage === 'index.html' || currentPage === 'home-2.html';
 
   navLinks.forEach(link => {
-    const href = link.getAttribute('href') || '';
-    const [rawPage] = href.split('#');
-    const linkPage = rawPage || 'index.html';
+    // Get the href and normalize it to a page name
+    const href = link.getAttribute('href');
+    const linkPage = href ? href.split('#')[0].split('/').pop() || 'index.html' : 'index.html';
 
-    if (linkPage === currentPage || (isHomeVariant && linkPage === 'index.html')) {
+    let isActive = false;
+
+    // RULE 1: Direct match (e.g., about.html matches about.html)
+    if (linkPage === currentPage && href) {
+      isActive = true;
+    } 
+    // RULE 2: Home Parent Label (highlight "Home" dropdown toggle if on any home variant)
+    else if (isHomeVariant && linkPage === 'index.html' && (link.tagName === 'BUTTON' || link.classList.contains('mobile-submenu-toggle'))) {
+      isActive = true;
+    }
+
+    // Apply or remove the active class
+    if (isActive) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
